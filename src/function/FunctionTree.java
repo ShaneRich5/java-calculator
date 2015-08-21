@@ -1,5 +1,7 @@
 package function;
 
+import util.Util;
+
 import static java.lang.System.out;
 
 /**
@@ -23,6 +25,16 @@ public class FunctionTree {
     public Node getRoot() {
         return root;
     }
+
+//    public boolean addNode(Node node) {
+//        if (Util.isEmpty(node))
+//            return false;
+//        if (Util.isEmpty(root))
+//            root = node;
+//        if(!(node.setLeft(node)))
+//            return fal
+//        return true;
+//    }
 
     //========================================================
     //              Traversal
@@ -65,4 +77,6 @@ public class FunctionTree {
         if (null != root)
             preOrder(root);
     }
+
+
 }

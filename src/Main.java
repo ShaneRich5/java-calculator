@@ -4,6 +4,7 @@ import component_pattern_test.SongComponent;
 import component_pattern_test.SongGroup;
 import function.FunctionTree;
 import function.Node;
+import function_test.Function;
 
 import java.util.Arrays;
 import java.util.List;
@@ -28,21 +29,35 @@ public class Main {
         //
 //        System.out.print(function.transform("*", 6).transform("*", 9));
 
-        String equation = "3*5";
+
+    }
+
+    public void testFunctionTree() {
+        String equation = "6*9*5";
 
         List<String> subEquations = Arrays.asList(equation.split("\\*"));
 
+        Node node = Node.newIntance("*");
+
+        node.setLeft(Node.newIntance(subEquations.get(0)));
+        node.setRight(Node.newIntance(subEquations.get(1)));
+
         Node root = Node.newIntance("*");
+
+        root.setLeft(node);
+        root.setRight(Node.newIntance(subEquations.get(2)));
 
         FunctionTree tree = FunctionTree.newInstance(root);
 
-        for (int i = 0; i < subEquations.size(); i++) {
-            Node node = Node.newIntance("+")
-        }
+        out.println("InOrder");
+        tree.inOrder();
+
+        out.println("PreOrder");
+        tree.preOrder();
+
+        out.println("PostOrder");
+        tree.postOrder();
     }
-
-
-
 
     public static Integer[] naturalNumbers() {
         return new Integer[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
