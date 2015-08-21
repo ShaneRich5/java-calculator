@@ -55,12 +55,12 @@
           <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/Main.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.8729412">
-                  <caret line="40" column="30" selection-start-line="40" selection-start-column="30" selection-end-line="40" selection-end-column="30" />
+                <state vertical-scroll-proportion="0.53411764">
+                  <caret line="28" column="20" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
                   <folding>
                     <element signature="imports" expanded="true" />
-                    <element signature="e#2078#2079#0" expanded="true" />
-                    <element signature="e#2145#2146#0" expanded="true" />
+                    <element signature="e#1704#1705#0" expanded="true" />
+                    <element signature="e#1771#1772#0" expanded="true" />
                     <element signature="method#randInt#0;class#Main#0" expanded="false" />
                     <element signature="method#songTest#0;class#Main#0" expanded="false" />
                   </folding>
@@ -120,23 +120,23 @@
           <file leaf-file-name="FunctionParser.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/function/FunctionParser.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.40705884">
-                  <caret line="27" column="5" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
+                <state vertical-scroll-proportion="0.28941175">
+                  <caret line="27" column="12" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
                   <folding>
                     <element signature="e#368#369#0" expanded="true" />
                     <element signature="e#408#409#0" expanded="true" />
                     <element signature="e#472#473#0" expanded="true" />
                     <element signature="e#523#524#0" expanded="true" />
-                    <element signature="e#557#558#0" expanded="true" />
-                    <element signature="e#588#589#0" expanded="true" />
-                    <element signature="e#632#633#0" expanded="true" />
-                    <element signature="e#686#687#0" expanded="true" />
-                    <element signature="e#724#725#0" expanded="true" />
-                    <element signature="e#771#772#0" expanded="true" />
-                    <element signature="e#812#813#0" expanded="true" />
-                    <element signature="e#862#863#0" expanded="true" />
-                    <element signature="e#900#901#0" expanded="true" />
-                    <element signature="e#947#948#0" expanded="true" />
+                    <element signature="e#978#979#0" expanded="true" />
+                    <element signature="e#1009#1010#0" expanded="true" />
+                    <element signature="e#1053#1054#0" expanded="true" />
+                    <element signature="e#1107#1108#0" expanded="true" />
+                    <element signature="e#1145#1146#0" expanded="true" />
+                    <element signature="e#1192#1193#0" expanded="true" />
+                    <element signature="e#1233#1234#0" expanded="true" />
+                    <element signature="e#1283#1284#0" expanded="true" />
+                    <element signature="e#1321#1322#0" expanded="true" />
+                    <element signature="e#1368#1369#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -172,8 +172,8 @@
         <option value="$PROJECT_DIR$/src/Node.java" />
         <option value="$PROJECT_DIR$/src/util/Util.java" />
         <option value="$PROJECT_DIR$/src/function/FunctionTree.java" />
-        <option value="$PROJECT_DIR$/src/function/FunctionParser.java" />
         <option value="$PROJECT_DIR$/src/function/Node.java" />
+        <option value="$PROJECT_DIR$/src/function/FunctionParser.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
       </list>
     </option>
@@ -650,16 +650,16 @@
       <workItem from="1439769648896" duration="1221000" />
       <workItem from="1439787133628" duration="33000" />
       <workItem from="1439823849432" duration="1404000" />
-      <workItem from="1440169545171" duration="11880000" />
+      <workItem from="1440169545171" duration="12706000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37075000" />
+    <option name="totallyTimeSpent" value="37901000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1985" y="24" width="1535" height="876" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -670,7 +670,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.41666666" sideWeight="0.49585405" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31979167" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31923077" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17259906" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -739,8 +739,8 @@
           <caret line="25" column="49" selection-start-line="25" selection-start-column="49" selection-end-line="25" selection-end-column="49" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2078#2079#0" expanded="true" />
-            <element signature="e#2145#2146#0" expanded="true" />
+            <element signature="e#1704#1705#0" expanded="true" />
+            <element signature="e#1771#1772#0" expanded="true" />
             <element signature="method#randInt#0;class#Main#0" expanded="false" />
             <element signature="method#songTest#0;class#Main#0" expanded="false" />
           </folding>
@@ -763,8 +763,8 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2078#2079#0" expanded="true" />
-            <element signature="e#2145#2146#0" expanded="true" />
+            <element signature="e#1704#1705#0" expanded="true" />
+            <element signature="e#1771#1772#0" expanded="true" />
             <element signature="method#randInt#0;class#Main#0" expanded="false" />
             <element signature="method#songTest#0;class#Main#0" expanded="false" />
           </folding>
@@ -787,8 +787,8 @@
           <caret line="25" column="49" selection-start-line="25" selection-start-column="49" selection-end-line="25" selection-end-column="49" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2078#2079#0" expanded="true" />
-            <element signature="e#2145#2146#0" expanded="true" />
+            <element signature="e#1704#1705#0" expanded="true" />
+            <element signature="e#1771#1772#0" expanded="true" />
             <element signature="method#randInt#0;class#Main#0" expanded="false" />
             <element signature="method#songTest#0;class#Main#0" expanded="false" />
           </folding>
@@ -811,8 +811,8 @@
           <caret line="18" column="68" selection-start-line="18" selection-start-column="68" selection-end-line="18" selection-end-column="68" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2078#2079#0" expanded="true" />
-            <element signature="e#2145#2146#0" expanded="true" />
+            <element signature="e#1704#1705#0" expanded="true" />
+            <element signature="e#1771#1772#0" expanded="true" />
             <element signature="method#randInt#0;class#Main#0" expanded="false" />
             <element signature="method#songTest#0;class#Main#0" expanded="false" />
           </folding>
@@ -835,8 +835,8 @@
           <caret line="18" column="68" selection-start-line="18" selection-start-column="68" selection-end-line="18" selection-end-column="68" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2078#2079#0" expanded="true" />
-            <element signature="e#2145#2146#0" expanded="true" />
+            <element signature="e#1704#1705#0" expanded="true" />
+            <element signature="e#1771#1772#0" expanded="true" />
             <element signature="method#randInt#0;class#Main#0" expanded="false" />
             <element signature="method#songTest#0;class#Main#0" expanded="false" />
           </folding>
@@ -859,8 +859,8 @@
           <caret line="18" column="68" selection-start-line="18" selection-start-column="68" selection-end-line="18" selection-end-column="68" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2078#2079#0" expanded="true" />
-            <element signature="e#2145#2146#0" expanded="true" />
+            <element signature="e#1704#1705#0" expanded="true" />
+            <element signature="e#1771#1772#0" expanded="true" />
             <element signature="method#randInt#0;class#Main#0" expanded="false" />
             <element signature="method#songTest#0;class#Main#0" expanded="false" />
           </folding>
@@ -883,8 +883,8 @@
           <caret line="18" column="46" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2078#2079#0" expanded="true" />
-            <element signature="e#2145#2146#0" expanded="true" />
+            <element signature="e#1704#1705#0" expanded="true" />
+            <element signature="e#1771#1772#0" expanded="true" />
             <element signature="method#randInt#0;class#Main#0" expanded="false" />
             <element signature="method#songTest#0;class#Main#0" expanded="false" />
           </folding>
@@ -907,8 +907,8 @@
           <caret line="18" column="46" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2078#2079#0" expanded="true" />
-            <element signature="e#2145#2146#0" expanded="true" />
+            <element signature="e#1704#1705#0" expanded="true" />
+            <element signature="e#1771#1772#0" expanded="true" />
             <element signature="method#randInt#0;class#Main#0" expanded="false" />
             <element signature="method#songTest#0;class#Main#0" expanded="false" />
           </folding>
@@ -998,29 +998,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/function/FunctionParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.40705884">
-          <caret line="27" column="5" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
-          <folding>
-            <element signature="e#368#369#0" expanded="true" />
-            <element signature="e#408#409#0" expanded="true" />
-            <element signature="e#472#473#0" expanded="true" />
-            <element signature="e#523#524#0" expanded="true" />
-            <element signature="e#557#558#0" expanded="true" />
-            <element signature="e#588#589#0" expanded="true" />
-            <element signature="e#632#633#0" expanded="true" />
-            <element signature="e#686#687#0" expanded="true" />
-            <element signature="e#724#725#0" expanded="true" />
-            <element signature="e#771#772#0" expanded="true" />
-            <element signature="e#812#813#0" expanded="true" />
-            <element signature="e#862#863#0" expanded="true" />
-            <element signature="e#900#901#0" expanded="true" />
-            <element signature="e#947#948#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/util/Util.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1062,14 +1039,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/function/FunctionParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.28941175">
+          <caret line="27" column="12" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
+          <folding>
+            <element signature="e#368#369#0" expanded="true" />
+            <element signature="e#408#409#0" expanded="true" />
+            <element signature="e#472#473#0" expanded="true" />
+            <element signature="e#523#524#0" expanded="true" />
+            <element signature="e#978#979#0" expanded="true" />
+            <element signature="e#1009#1010#0" expanded="true" />
+            <element signature="e#1053#1054#0" expanded="true" />
+            <element signature="e#1107#1108#0" expanded="true" />
+            <element signature="e#1145#1146#0" expanded="true" />
+            <element signature="e#1192#1193#0" expanded="true" />
+            <element signature="e#1233#1234#0" expanded="true" />
+            <element signature="e#1283#1284#0" expanded="true" />
+            <element signature="e#1321#1322#0" expanded="true" />
+            <element signature="e#1368#1369#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8729412">
-          <caret line="40" column="30" selection-start-line="40" selection-start-column="30" selection-end-line="40" selection-end-column="30" />
+        <state vertical-scroll-proportion="0.53411764">
+          <caret line="28" column="20" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2078#2079#0" expanded="true" />
-            <element signature="e#2145#2146#0" expanded="true" />
+            <element signature="e#1704#1705#0" expanded="true" />
+            <element signature="e#1771#1772#0" expanded="true" />
             <element signature="method#randInt#0;class#Main#0" expanded="false" />
             <element signature="method#songTest#0;class#Main#0" expanded="false" />
           </folding>

@@ -10,32 +10,21 @@ import function_test.Function;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
+import java.util.Scanner;
 
 import static java.lang.System.out;
 
 public class Main {
 
-
-
     public static void main(String[] args) {
-        String equation = "6*9*5";
+        out.println("Enter an expression: ");
+        Scanner scan = new Scanner(System.in);
+        String expression = scan.nextLine();
 
-//        List<String> subEquations = Arrays.asList(equation.split("[*]", 2));
-//
-//        for (String str: subEquations)
-//            out.println("[" + str + "]");
+//        String str  = "a * b * c";
+//        String str = "a + b - c * d / e < f > g >= h <= i == j";
 
-        String[] expressions = FunctionParser.newInstance(equation).splitMultiplication();
-
-//        for (String str: expressions)
-//            out.println("[" + str + "]");
-
-        String str = "a + b - c * d / e < f > g >= h <= i == j";
-
-        String[] ops = str.split("\\s*[a-zA-Z]+\\s*");
-        String[] notops = str.split("\\s*[^a-zA-Z]+\\s*");
-        String[] res = new String[ops.length+notops.length-1];
-        for(int i=0; i<res.length; i++) res[i] = i%2==0 ? notops[i/2] : ops[i/2+1];
+        String[] res = FunctionParser.newInstance(expression).tokenify();
 
         for(int i = 0; i < res.length; i++)
             out.println(res[i]);
@@ -61,12 +50,6 @@ public class Main {
         root.setRight(Node.newIntance(subEquations.get(2)));
 
         FunctionTree tree = FunctionTree.newInstance(root);
-
-//        out.println("InOrder");
-//        tree.inOrder();
-//
-//        out.println("PreOrder");
-//        tree.preOrder();
 
         out.println("PostOrder");
         tree.postOrder();
