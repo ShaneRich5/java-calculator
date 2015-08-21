@@ -2,6 +2,7 @@ import component_pattern_test.DiscJockey;
 import component_pattern_test.Song;
 import component_pattern_test.SongComponent;
 import component_pattern_test.SongGroup;
+import function.FunctionParser;
 import function.FunctionTree;
 import function.Node;
 import function_test.Function;
@@ -14,25 +15,37 @@ import static java.lang.System.out;
 
 public class Main {
 
+
+
     public static void main(String[] args) {
-        // generate data to test
-//        Integer data[] = naturalNumbers();
+        String equation = "6*9*5";
 
-        // apply function to it
-//        for (int x : data) System.out.print(x + " ");
+//        List<String> subEquations = Arrays.asList(equation.split("[*]", 2));
+//
+//        for (String str: subEquations)
+//            out.println("[" + str + "]");
 
-        // new line
-//        System.out.println();
+        String[] expressions = FunctionParser.newInstance(equation).splitMultiplication();
 
-//        function_test.Function function = new function_test.Function(data);
+//        for (String str: expressions)
+//            out.println("[" + str + "]");
 
-        //
-//        System.out.print(function.transform("*", 6).transform("*", 9));
+        String str = "a + b - c * d / e < f > g >= h <= i == j";
 
+        String[] ops = str.split("\\s*[a-zA-Z]+\\s*");
+        String[] notops = str.split("\\s*[^a-zA-Z]+\\s*");
+        String[] res = new String[ops.length+notops.length-1];
+        for(int i=0; i<res.length; i++) res[i] = i%2==0 ? notops[i/2] : ops[i/2+1];
+
+        for(int i = 0; i < res.length; i++)
+            out.println(res[i]);
+    }
+
+    private static void buildTree(String[] expressions) {
 
     }
 
-    public void testFunctionTree() {
+    public static void testFunctionTree() {
         String equation = "6*9*5";
 
         List<String> subEquations = Arrays.asList(equation.split("\\*"));
@@ -49,11 +62,11 @@ public class Main {
 
         FunctionTree tree = FunctionTree.newInstance(root);
 
-        out.println("InOrder");
-        tree.inOrder();
-
-        out.println("PreOrder");
-        tree.preOrder();
+//        out.println("InOrder");
+//        tree.inOrder();
+//
+//        out.println("PreOrder");
+//        tree.preOrder();
 
         out.println("PostOrder");
         tree.postOrder();

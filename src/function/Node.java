@@ -1,5 +1,7 @@
 package function;
 
+import util.Util;
+
 /**
  * Created by shane on 8/21/15.
  *
@@ -15,10 +17,11 @@ public class Node {
     private Node left;
     private Node right;
 
+    public Node(){}
+
     public Node(String data){
         this.data = data;
     }
-
 
     //========================================================
     //              Factories
@@ -74,4 +77,15 @@ public class Node {
         return right;
     }
 
+    public boolean hasChild(){
+        return !Util.isEmpty(left) || !Util.isEmpty(right);
+    }
+
+    public boolean hasRight() {
+        return !Util.isEmpty(right);
+    }
+
+    public boolean hasLeft() {
+        return !Util.isEmpty(left);
+    }
 }
