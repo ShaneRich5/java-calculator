@@ -15,6 +15,18 @@ public class Node {
     private Node left;
     private Node right;
 
+    public Node(String data){
+        this.data = data;
+    }
+
+
+    //========================================================
+    //              Factories
+    //========================================================
+    public static Node newIntance(String data){
+        return new Node(data);
+    }
+
     public void setData(String newData) {
         data = newData;
     }

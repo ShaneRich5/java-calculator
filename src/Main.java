@@ -2,6 +2,8 @@ import component_pattern_test.DiscJockey;
 import component_pattern_test.Song;
 import component_pattern_test.SongComponent;
 import component_pattern_test.SongGroup;
+import function.FunctionTree;
+import function.Node;
 
 import java.util.Arrays;
 import java.util.List;
@@ -26,23 +28,17 @@ public class Main {
         //
 //        System.out.print(function.transform("*", 6).transform("*", 9));
 
-        String equation = "3+5";
+        String equation = "3*5";
 
-        List<String> subequations = Arrays.asList(equation.split("\\+"));
+        List<String> subEquations = Arrays.asList(equation.split("\\*"));
 
-        out.print("Equation: ");
+        Node root = Node.newIntance("*");
 
-        int result = 0;
+        FunctionTree tree = FunctionTree.newInstance(root);
 
-        for (int i=0; i<subequations.size(); i++){
-            out.print(subequations.get(i));
-
-            out.print(i == subequations.size() - 1 ? "=" : "+");
-
-            result += Integer.parseInt(subequations.get(i));
+        for (int i = 0; i < subEquations.size(); i++) {
+            Node node = Node.newIntance("+")
         }
-
-        out.print(result);
     }
 
 

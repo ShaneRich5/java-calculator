@@ -13,6 +13,13 @@ public class FunctionTree {
         this.root = root;
     }
 
+    //========================================================
+    //              Factories
+    //========================================================
+    public static FunctionTree newInstance(Node root) {
+        return new FunctionTree(root);
+    }
+
     public Node getRoot() {
         return root;
     }
