@@ -1,4 +1,8 @@
-import java.lang.reflect.Array;
+import component_pattern_test.DiscJockey;
+import component_pattern_test.Song;
+import component_pattern_test.SongComponent;
+import component_pattern_test.SongGroup;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
@@ -17,7 +21,7 @@ public class Main {
         // new line
 //        System.out.println();
 
-//        Function function = new Function(data);
+//        function_test.Function function = new function_test.Function(data);
 
         //
 //        System.out.print(function.transform("*", 6).transform("*", 9));
@@ -68,10 +72,10 @@ public class Main {
 
         // Top level component that holds everything
 
-        SongComponent everySong = new SongGroup("Song List", "Every Song Available");
+        SongComponent everySong = new SongGroup("component_pattern_test.Song List", "Every component_pattern_test.Song Available");
 
         // Composite that holds individual groups of songs
-        // This holds Songs plus a SongGroup with Songs
+        // This holds Songs plus a component_pattern_test.SongGroup with Songs
 
         everySong.add(industrialMusic);
 
@@ -83,7 +87,7 @@ public class Main {
         dubstepMusic.add(new Song("Centipede", "Knife Party", 2012));
         dubstepMusic.add(new Song("Tetris", "Doctor P", 2011));
 
-        // This is a SongGroup that just holds Songs
+        // This is a component_pattern_test.SongGroup that just holds Songs
 
         everySong.add(heavyMetalMusic);
 

@@ -1,8 +1,8 @@
+package function_test;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
 
 /**
  * Created by shane on 8/12/15.

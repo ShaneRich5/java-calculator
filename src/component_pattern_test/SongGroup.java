@@ -1,3 +1,5 @@
+package component_pattern_test;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 
