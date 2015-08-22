@@ -8,6 +8,11 @@ import java.util.List;
  * Created by shane on 8/12/15.
  */
 public class Function {
+    public static final String ADDITION = "+";
+    public static final String SUBTRACTION = "-";
+    public static final String MULTIPLICATION = "*";
+    public static final String DIVISION = "/";
+
     public List<Integer> data;
     public List<String> errors;
     public int size;

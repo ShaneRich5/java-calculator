@@ -2,10 +2,9 @@ import component_pattern_test.DiscJockey;
 import component_pattern_test.Song;
 import component_pattern_test.SongComponent;
 import component_pattern_test.SongGroup;
-import function.FunctionParser;
-import function.FunctionTree;
-import function.Node;
+import function.*;
 import function_test.Function;
+import util.Util;
 
 import java.util.Arrays;
 import java.util.List;
@@ -19,15 +18,26 @@ public class Main {
     public static void main(String[] args) {
         out.println("Enter an expression: ");
         Scanner scan = new Scanner(System.in);
-        String expression = scan.nextLine();
+        String expression = scan.nextLine().trim();
+
 
 //        String str  = "a * b * c";
-//        String str = "a + b - c * d / e < f > g >= h <= i == j";
+//        String expression = "a + b - c * d / e < f > g >= h <= i == j";
 
         String[] res = FunctionParser.newInstance(expression).tokenify();
 
-        for(int i = 0; i < res.length; i++)
-            out.println(res[i]);
+        Node node = null;
+
+        Tree tree = FunctionTree.buildTree(res);
+
+        if (tree instanceof NullTree) {
+            out.print("Nothing entered");
+            return;
+        }
+        out.print("Something entered " + tree.getClass());
+//        FunctionTree tree = FunctionTree.buildTree(res);
+
+        FunctionAdapter adapter = new FunctionAdapter(res);
     }
 
     private static void buildTree(String[] expressions) {

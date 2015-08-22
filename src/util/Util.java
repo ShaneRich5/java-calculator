@@ -4,6 +4,7 @@ package util;
  * Created by shane on 8/21/15.
  */
 public class Util {
+    public static final String EMPTY_STRING = "";
 
     /**
      * Explicitly prevents instantiation and inheritance

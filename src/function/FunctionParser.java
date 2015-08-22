@@ -27,6 +27,7 @@ public class FunctionParser {
         for(int i=0; i<res.length; i++)
             res[i] = i%2==0 ? notops[i/2] : ops[i/2+1];
 
+
         return res;
     }
 
