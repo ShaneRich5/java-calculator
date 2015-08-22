@@ -28,16 +28,21 @@ public class Main {
 
         Node node = null;
 
-        Tree tree = FunctionTree.buildTree(res);
+        FunctionAdapter adapter = new FunctionAdapter(res);
+
+        Tree tree = adapter.buildTree();
 
         if (tree instanceof NullTree) {
             out.print("Nothing entered");
             return;
         }
-        out.print("Something entered " + tree.getClass());
+//        else
+//            tree = (FunctionTree) tree;
+
 //        FunctionTree tree = FunctionTree.buildTree(res);
 
-        FunctionAdapter adapter = new FunctionAdapter(res);
+        ((FunctionTree) tree).postOrder();
+
     }
 
     private static void buildTree(String[] expressions) {

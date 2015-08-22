@@ -3,6 +3,7 @@ package function;
 import function_test.Function;
 import util.Util;
 
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -32,7 +33,7 @@ public class FunctionAdapter {
         if (expressions.length <= 1)
             return NullTree.getInstance();
 
-
+        return FunctionTree.newInstance(findSubtraction(null, expressions));
     }
 
     private Node findSubtraction(Node node, String[] expressions) {
@@ -41,7 +42,19 @@ public class FunctionAdapter {
 
         expressions = reverseArray(expressions);
 
+        int index = Arrays.asList(expressions).indexOf(Function.SUBTRACTION);
 
+        if (-1 == index) {
+            return null;
+        }
+
+        if (Util.isEmpty(node))
+            node = new Node("-");
+
+        node.setLeft(findSubtraction(null, Arrays.copyOfRange(expressions, 0, index)));
+        node.setRight(findSubtraction(null, Arrays.copyOfRange(expressions, index + 1, expressions.length)));
+
+        return node;
     }
 
 
