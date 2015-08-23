@@ -7,7 +7,7 @@ public class FunctionParser {
     public static final String ADDITION = "[+]";
     public static final String SUBTRACTION = "[-]";
     public static final String DIVISION = "[/]";
-    public static final String MUTILIPLICATION = "[*]";
+    public static final String MUTIPLICATION = "[*]";
 
     private String equation;
 
@@ -27,7 +27,6 @@ public class FunctionParser {
         for(int i=0; i<res.length; i++)
             res[i] = i%2==0 ? notops[i/2] : ops[i/2+1];
 
-
         return res;
     }
 
@@ -36,7 +35,7 @@ public class FunctionParser {
     }
 
     public String[] splitMultiplication(){
-        return equation.split(MUTILIPLICATION);
+        return equation.split(MUTIPLICATION);
     }
 
     public String[] splitAddition(){

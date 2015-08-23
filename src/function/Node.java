@@ -8,16 +8,10 @@ import util.Util;
  * If
  */
 public class Node {
-    public static final String OPERAND = "operand";
-    public static final String OPERATOR = "operator";
-
     private String data;
-    private String type;
 
     private Node left;
     private Node right;
-
-    public Node(){}
 
     public Node(String data){
         this.data = data;
@@ -26,7 +20,7 @@ public class Node {
     //========================================================
     //              Factories
     //========================================================
-    public static Node newIntance(String data){
+    public static Node newInstance(String data){
         return new Node(data);
     }
 

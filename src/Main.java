@@ -20,13 +20,10 @@ public class Main {
         Scanner scan = new Scanner(System.in);
         String expression = scan.nextLine().trim();
 
-
 //        String str  = "a * b * c";
 //        String expression = "a + b - c * d / e < f > g >= h <= i == j";
 
         String[] res = FunctionParser.newInstance(expression).tokenify();
-
-        Node node = null;
 
         FunctionAdapter adapter = new FunctionAdapter(res);
 
@@ -36,16 +33,8 @@ public class Main {
             out.print("Nothing entered");
             return;
         }
-//        else
-//            tree = (FunctionTree) tree;
-
-//        FunctionTree tree = FunctionTree.buildTree(res);
 
         ((FunctionTree) tree).postOrder();
-
-    }
-
-    private static void buildTree(String[] expressions) {
 
     }
 
@@ -54,29 +43,20 @@ public class Main {
 
         List<String> subEquations = Arrays.asList(equation.split("\\*"));
 
-        Node node = Node.newIntance("*");
+        Node node = Node.newInstance("*");
 
-        node.setLeft(Node.newIntance(subEquations.get(0)));
-        node.setRight(Node.newIntance(subEquations.get(1)));
+        node.setLeft(Node.newInstance(subEquations.get(0)));
+        node.setRight(Node.newInstance(subEquations.get(1)));
 
-        Node root = Node.newIntance("*");
+        Node root = Node.newInstance("*");
 
         root.setLeft(node);
-        root.setRight(Node.newIntance(subEquations.get(2)));
+        root.setRight(Node.newInstance(subEquations.get(2)));
 
         FunctionTree tree = FunctionTree.newInstance(root);
 
         out.println("PostOrder");
         tree.postOrder();
-    }
-
-    public static Integer[] naturalNumbers() {
-        return new Integer[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-    }
-
-    public static int randInt(int min, int max) {
-        Random random = new Random();
-        return random.nextInt((max - min) + 1) + min;
     }
 
     public static void songTest() {

@@ -32,7 +32,7 @@ public class FunctionTree extends Tree {
 
     public static FunctionTree newInstance() {
         FunctionTree tree = new FunctionTree();
-        tree.setRoot(Node.newIntance(""));
+        tree.setRoot(Node.newInstance(""));
         return tree;
     }
 
@@ -87,19 +87,5 @@ public class FunctionTree extends Tree {
     public void preOrder(){
         if (null != root)
             preOrder(root);
-    }
-
-    /**
-     * Creates an instance of the FunctionTree object by iterating
-     * through an array several times, creating several
-     * @param expressions
-     * @return
-     */
-    public static Tree buildTree(String[] expressions) {
-        if (1 <= expressions.length)
-            return NullTree.getInstance();
-
-
-        return new FunctionTree(new Node());
     }
 }

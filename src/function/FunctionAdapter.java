@@ -10,20 +10,15 @@ import java.util.List;
 /**
  * Created by shane on 8/21/15.
  */
-public class FunctionAdapter {
+public final class FunctionAdapter {
     private Tree tree;
-    private List<String> expressions;
+    private final List<String> expressions;
     private String[][] holders;
     private Node root = null;
 
     public FunctionAdapter(String[] expressions) {
         this.expressions = Arrays.asList(expressions);
         tree = NullTree.getInstance(); // represents empty tree
-    }
-
-    public List<String> toList() {
-        // TODO
-        return null;
     }
 
     public Tree buildTree() {
@@ -42,7 +37,7 @@ public class FunctionAdapter {
 
         // it is an operand
         if (1 == expressions.size()) {
-            return Node.newIntance(expressions.remove(0)); // pop it and return as new node
+            return Node.newInstance(expressions.remove(0)); // pop it and return as new node
         }
 
         // indexes of the various operations
@@ -54,7 +49,7 @@ public class FunctionAdapter {
         // check if minus sign is present
         if (-1 != indexOfMinusSign){
 
-            node = Node.newIntance(Function.SUBTRACTION);
+            node = Node.newInstance(Function.SUBTRACTION);
             expressions.remove(indexOfMinusSign);
 
             node.setLeft(findOperands(expressions.subList(0, indexOfMinusSign)));
@@ -62,7 +57,7 @@ public class FunctionAdapter {
 
         } else if (-1 != indexOfAddSign){
 
-            node = Node.newIntance(Function.ADDITION);
+            node = Node.newInstance(Function.ADDITION);
             expressions.remove(indexOfAddSign);
 
             node.setLeft(findOperands(expressions.subList(0, indexOfAddSign)));
@@ -70,7 +65,7 @@ public class FunctionAdapter {
 
         } else if (-1 != indexOfDivisionSign){
 
-            node = Node.newIntance(Function.DIVISION);
+            node = Node.newInstance(Function.DIVISION);
             expressions.remove(indexOfDivisionSign);
 
             node.setLeft(findOperands(expressions.subList(0, indexOfDivisionSign)));
@@ -78,7 +73,7 @@ public class FunctionAdapter {
 
         } else if (-1 != indexOfMultiplicationSign) {
 
-            node = Node.newIntance(Function.MULTIPLICATION);
+            node = Node.newInstance(Function.MULTIPLICATION);
             expressions.remove(indexOfMultiplicationSign);
 
             node.setLeft(findOperands(expressions.subList(0, indexOfMultiplicationSign)));
@@ -87,37 +82,5 @@ public class FunctionAdapter {
         }
 
         return node;
-    }
-
-    private Node findSubtraction(Node node, String[] expressions) {
-        if (expressions.length == 0)
-            return null;
-
-        expressions = reverseArray(expressions);
-
-        int index = Arrays.asList(expressions).indexOf(Function.SUBTRACTION);
-
-        if (-1 == index) {
-            return null;
-        }
-
-        if (Util.isEmpty(node))
-            node = new Node("-");
-
-        node.setLeft(findSubtraction(null, Arrays.copyOfRange(expressions, 0, index)));
-        node.setRight(findSubtraction(null, Arrays.copyOfRange(expressions, index + 1, expressions.length)));
-
-        return node;
-    }
-
-
-    private String[] reverseArray(String[] arr) {
-        for (int i = 0; i < arr.length / 2; i++) {
-            String temp = arr[i];
-            arr[i] = arr[arr.length - i - 1]; // remain in bound
-            arr[arr.length - i - 1] = temp;
-        }
-
-        return arr;
     }
 }
