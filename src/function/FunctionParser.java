@@ -3,11 +3,11 @@ package function;
 /**
  * Created by shane on 8/21/15.
  */
-public class FunctionParser {
+public final class FunctionParser {
     public static final String ADDITION = "[+]";
     public static final String SUBTRACTION = "[-]";
     public static final String DIVISION = "[/]";
-    public static final String MUTIPLICATION = "[*]";
+    public static final String MULTIPLICATION = "[*]";
 
     private String equation;
 
@@ -35,7 +35,7 @@ public class FunctionParser {
     }
 
     public String[] splitMultiplication(){
-        return equation.split(MUTIPLICATION);
+        return equation.split(MULTIPLICATION);
     }
 
     public String[] splitAddition(){

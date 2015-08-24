@@ -6,10 +6,7 @@ import function.*;
 import function_test.Function;
 import util.Util;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Random;
-import java.util.Scanner;
+import java.util.*;
 
 import static java.lang.System.out;
 
@@ -17,15 +14,15 @@ public class Main {
 
     public static void main(String[] args) {
         out.println("Enter an expression: ");
-        Scanner scan = new Scanner(System.in);
-        String expression = scan.nextLine().trim();
+//        Scanner scan = new Scanner(System.in);
+//        String expression = scan.nextLine().trim();
 
-//        String str  = "a * b * c";
+        String expression  = "a * b * c";
 //        String expression = "a + b - c * d / e < f > g >= h <= i == j";
 
-        String[] res = FunctionParser.newInstance(expression).tokenify();
+        String[] tokens = FunctionParser.newInstance(expression).tokenify();
 
-        FunctionAdapter adapter = new FunctionAdapter(res);
+        FunctionAdapter adapter = new FunctionAdapter(tokens);
 
         Tree tree = adapter.buildTree();
 
@@ -34,7 +31,15 @@ public class Main {
             return;
         }
 
-        ((FunctionTree) tree).postOrder();
+
+        List<String> testList = new ArrayList<>(Arrays.asList(tokens));
+
+        out.println("Test list: " + testList.toString());
+        out.println("Index of last * " + testList.lastIndexOf("*"));
+
+//        out.print(Arrays.toString(res));
+
+//        ((FunctionTree) tree).postOrder();
 
     }
 
