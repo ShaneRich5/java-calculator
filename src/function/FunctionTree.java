@@ -12,10 +12,16 @@ import static java.lang.System.out;
  * Created by shane on 8/21/15.
  */
 public final class FunctionTree extends Tree {
+    List<String> validOperations = new ArrayList<>();
 
     private Node root;
 
     private FunctionTree(Node root) {
+        validOperations.add(Constants.ADDITION);
+        validOperations.add(Constants.SUBTRACTION);
+        validOperations.add(Constants.MULTIPLICATION);
+        validOperations.add(Constants.DIVISION);
+
         this.root = root;
     }
 
@@ -78,8 +84,10 @@ public final class FunctionTree extends Tree {
     }
 
     public String execute(){
-        List<String> validOperations = new ArrayList<>();
-        validOperations.add(Constants);
+        if (validOperations.contains("+"))
+            return "Yes";
+
+
 
         FunctionTree tree = FunctionTree.newInstance(this.root); // use a new instance
 
@@ -97,6 +105,7 @@ public final class FunctionTree extends Tree {
 
     private Double calculate(Node left, Node right, String operation) {
         try {
+            // if leaf
             return performOperation(
                     Double.parseDouble(left.getData()),
                     Double.parseDouble(right.getData()),
@@ -121,5 +130,12 @@ public final class FunctionTree extends Tree {
             default:
                 throw new UnsupportedOperationException();
         }
+    }
+
+    private boolean operatorIsValid(String operator){
+        for (int i = 0; i < validOperations.size(); i++)
+            if (validOperations.get(i).equals(operator))
+                return true;
+        return false;
     }
 }

@@ -74,15 +74,8 @@ public class Node {
         return !Util.isEmpty(left) || !Util.isEmpty(right);
     }
 
-    public boolean hasChildren() {  return !Util.isEmpty(left) && !Util.isEmpty(right); }
-
-    /**
-     * Determins if the node is a grandparent
-     *
-     * @return bool
-     */
-    public boolean hasGrandchildren() {
-        return left.hasChildren() && right.hasGrandchildren();
+    public boolean isLeaf() {
+        return Util.isEmpty(left) && Util.isEmpty(right);
     }
 
     public boolean hasRight() {
