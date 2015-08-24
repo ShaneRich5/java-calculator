@@ -8,8 +8,10 @@ import util.Util;
 public class NullTree extends Tree {
     private static NullTree sInstance = null;
 
-    private NullTree(){
+    private NullTree(){}
 
+    public Node getRoot(){
+        return null;
     }
 
     public static NullTree getInstance(){

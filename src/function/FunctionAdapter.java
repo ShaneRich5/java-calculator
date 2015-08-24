@@ -27,8 +27,8 @@ public final class FunctionAdapter {
     }
 
     private Node findOperands(List<String> expressions){
-        System.out.print(expressions.toString());
-        System.out.println(" index: " + lastIndexOfOperator(expressions));
+//        System.out.println("Current expressions:" + expressions.size() + " " + expressions.toString());
+//        System.out.println(" index: " + lastIndexOfOperator(expressions));
 
         Node node = null;
 
@@ -42,18 +42,18 @@ public final class FunctionAdapter {
 
         if (-1 != index){
             node = Node.newInstance(expressions.remove(index));
-            node.setLeft(findOperands(expressions.subList(0, index)));
             node.setRight(findOperands(expressions.subList(index, expressions.size())));
+            node.setLeft(findOperands(expressions.subList(0, index)));
         }
 
         return node;
     }
 
     private int lastIndexOfOperator(List<String> expressions) {
-        int indexOfMinusSign = expressions.lastIndexOf(Function.SUBTRACTION);
-        int indexOfAddSign = expressions.lastIndexOf(Function.ADDITION);
-        int indexOfDivisionSign = expressions.lastIndexOf(Function.DIVISION);
-        int indexOfMultiplicationSign = expressions.indexOf(Function.MULTIPLICATION);
+        int indexOfMinusSign = lastIndex(expressions, Function.SUBTRACTION);
+        int indexOfAddSign = lastIndex(expressions, Function.ADDITION);
+        int indexOfDivisionSign = lastIndex(expressions, Function.DIVISION);
+        int indexOfMultiplicationSign = lastIndex(expressions, Function.MULTIPLICATION);
 
         if (indexOfMinusSign > -1)
             return indexOfMinusSign;
@@ -67,4 +67,11 @@ public final class FunctionAdapter {
         return -1;
     }
 
+    private int lastIndex(List<String> elements, String expression){
+        for (int i = (elements.size() - 1); i >= 0; i--) {
+            if (elements.get(i).equals(expression))
+                return i;
+        }
+        return -1;
+    }
 }

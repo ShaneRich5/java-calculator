@@ -21,8 +21,8 @@ public final class FunctionParser {
 
     public String[] tokenify(){
         // http://stackoverflow.com/questions/9856916/java-string-split-regex
-        String[] ops = equation.split("\\s*[a-zA-Z]+\\s*");
-        String[] notops = equation.split("\\s*[^a-zA-Z]+\\s*");
+        String[] ops = equation.split("\\s*[a-zA-Z0-9]+\\s*");
+        String[] notops = equation.split("\\s*[^a-zA-Z0-9]+\\s*");
         String[] res = new String[ops.length+notops.length-1];
         for(int i=0; i<res.length; i++)
             res[i] = i%2==0 ? notops[i/2] : ops[i/2+1];

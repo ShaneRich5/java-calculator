@@ -2,26 +2,19 @@ package function;
 
 import util.Util;
 
+import java.util.function.Function;
+
 import static java.lang.System.out;
 
 /**
  * Created by shane on 8/21/15.
  */
-public class FunctionTree extends Tree {
-
-    public static final String EQUALS = "==";
-    public static final String GREATER = ">";
-    public static final String LESSER = "<";
-    public static final String GREATER_EQUAL =">=";
-    public static final String LESSER_EQUAL ="<=";
-
+public final class FunctionTree extends Tree {
     private Node root;
 
-    public FunctionTree(Node root) {
+    private FunctionTree(Node root) {
         this.root = root;
     }
-
-    private FunctionTree() {}
 
     //========================================================
     //              Factories
@@ -30,21 +23,8 @@ public class FunctionTree extends Tree {
         return new FunctionTree(root);
     }
 
-    public static FunctionTree newInstance() {
-        FunctionTree tree = new FunctionTree();
-        tree.setRoot(Node.newInstance(""));
-        return tree;
-    }
-
     public Node getRoot() {
         return root;
-    }
-
-    public boolean setRoot(Node newRoot){
-        if (!Util.isEmpty(root))
-            return false;
-        root = newRoot;
-        return true;
     }
 
     //========================================================
@@ -66,6 +46,10 @@ public class FunctionTree extends Tree {
         }
     }
 
+    public boolean isEmpty(){
+        return null == root;
+    }
+
     public void preOrder(Node node){
         if (null != node) {
             out.println(node.getData());
@@ -82,10 +66,54 @@ public class FunctionTree extends Tree {
     public void postOrder() {
         if (null != root)
             postOrder(root);
+        System.out.println("Empty tree");
     }
 
     public void preOrder(){
         if (null != root)
             preOrder(root);
+    }
+
+    public String execute(){
+        FunctionTree tree = FunctionTree.newInstance(this.root); // use a new instance
+
+        Node root = tree.getRoot();
+
+        if (root.hasChildren())
+            root = Node.newInstance(
+                    String.valueOf(
+                            calculate(root.getLeft(), root.getRight(), root.getData())
+                    )
+            );
+
+        return root.getData();
+    }
+
+    private Double calculate(Node left, Node right, String operation) {
+        try {
+            return performOperation(
+                    Double.parseDouble(left.getData()),
+                    Double.parseDouble(right.getData()),
+                    operation);
+        } catch (UnsupportedOperationException e) {
+            return Double.NaN;
+        } catch (Exception e) {
+            return Double.NaN;
+        }
+    }
+
+    private double performOperation(double operandA, double operandB, String operation) {
+        switch (operation){
+            case "+":
+                return operandA + operandB;
+            case "-":
+                return operandA - operandB;
+            case "/":
+                return operandA / operandB;
+            case "*":
+                return operandA * operandB;
+            default:
+                throw new UnsupportedOperationException();
+        }
     }
 }

@@ -62,7 +62,6 @@ public class Node {
         return true;
     }
 
-
     public Node getLeft() {
         return left;
     }
@@ -75,11 +74,22 @@ public class Node {
         return !Util.isEmpty(left) || !Util.isEmpty(right);
     }
 
+    public boolean hasChildren() {  return !Util.isEmpty(left) && !Util.isEmpty(right); }
+
+    /**
+     * Determins if the node is a grandparent
+     *
+     * @return bool
+     */
+    public boolean hasGrandchildren() {
+        return left.hasChildren() && right.hasGrandchildren();
+    }
+
     public boolean hasRight() {
-        return !Util.isEmpty(right);
+        return !Util.isEmpty(getRight());
     }
 
     public boolean hasLeft() {
-        return !Util.isEmpty(left);
+        return !Util.isEmpty(getLeft());
     }
 }

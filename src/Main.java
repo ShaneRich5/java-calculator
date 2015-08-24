@@ -13,12 +13,15 @@ import static java.lang.System.out;
 public class Main {
 
     public static void main(String[] args) {
+        String expression = null;
+
         out.println("Enter an expression: ");
 //        Scanner scan = new Scanner(System.in);
-//        String expression = scan.nextLine().trim();
+//        expression = scan.nextLine().trim();
 
-        String expression  = "a * b * c";
-//        String expression = "a + b - c * d / e < f > g >= h <= i == j";
+        expression = "1 / 2";
+//        expression  = "a * b * c";
+//        expression = "a + b - c * d / e < f > g >= h <= i == j";
 
         String[] tokens = FunctionParser.newInstance(expression).tokenify();
 
@@ -31,16 +34,19 @@ public class Main {
             return;
         }
 
+        String result = ((FunctionTree) tree).execute();
 
-        List<String> testList = new ArrayList<>(Arrays.asList(tokens));
+        out.print("Result is " + result);
+//        List<String> testList = new ArrayList<>(Arrays.asList(tokens));
 
-        out.println("Test list: " + testList.toString());
-        out.println("Index of last * " + testList.lastIndexOf("*"));
+//        out.println("Test list: " + testList.toString());
+//        out.println("Index of last * " + testList.lastIndexOf("*"));
 
 //        out.print(Arrays.toString(res));
 
 //        ((FunctionTree) tree).postOrder();
 
+//        out.print("Result = " + ((FunctionTree) tree).execute());
     }
 
     public static void testFunctionTree() {
