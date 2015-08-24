@@ -4,6 +4,7 @@ import util.Util;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.TreeMap;
 import java.util.function.Function;
 
 import static java.lang.System.out;
@@ -122,39 +123,17 @@ public final class FunctionTree extends Tree {
         }
     }
 
-    private Node calcNode(Node left, Node right, String operation){
-        System.out.println(left.getData() + operation + right.getData());
-        // if they aren't leaves
-        // then make them leaves....
-//        if (!left.isLeaf())
-//            left = calcNode(left.getLeft(), left.getRight(), left.getData());
-//        if (!right.isLeaf())
-//            right = calcNode(right.getLeft(), right.getRight(), right.getData());
-//
-//        return Node.newInstance(
-//                String.valueOf(
-//                        performOperation(Double.parseDouble(left.getData()),
-//                                Double.parseDouble(right.getData()),
-//                                operation)));
-        // if they are both leave, execut the function
-        if (left.isLeaf() && right.isLeaf())
-            return Node.newInstance(performOperation(Double.parseDouble(left.getData()), Double.parseDouble(right.getData()), operation).toString());
-        // else, if the right is a leaf, clearly the left is not
-//        else if (right.isLeaf())
-//            return Node.newInstance(performOperation(Double.parseDouble(calcNode(left.getLeft(), left.getRight(), left.getData()).getData()), Double.parseDouble(right.getData()), operation).toString());
-//        // and vice versa
-//        else if (left.isLeaf())
-//            return Node.newInstance(performOperation(Double.parseDouble(left.getData()), Double.parseDouble(calcNode(right.getLeft(), right.getRight(), right.getData()).getData()), operation).toString());
-        // neither are leaves
-        else
-            return Node.newInstance(performOperation(
-                    Double.parseDouble((left.isLeaf()) ? (calcNode(left.getLeft(), left.getRight(), left.getData()).getData()) : left.getData()),
-                    Double.parseDouble((right.isLeaf()) ? (calcNode(right.getLeft(), right.getRight(), right.getData()).getData()) : right.getData()),
-                    operation).toString());
+    private Node calcNode(Node leftNode, Node rightNode, String operation){
+        System.out.println(leftNode.getData() + operation + rightNode.getData());
 
+        return Node.newInstance(String.valueOf(performOperation(
+                Double.parseDouble(!(leftNode.isLeaf()) ? (calcNode(leftNode.getLeft(), leftNode.getRight(), leftNode.getData())).getData() : leftNode.getData()),
+                Double.parseDouble(!(rightNode.isLeaf()) ? (calcNode(rightNode.getLeft(), rightNode.getRight(), rightNode.getData())).getData() : rightNode.getData()),
+                operation
+        )));
     }
 
-    private Double performOperation(double operandA, double operandB, String operation) {
+    private double performOperation(double operandA, double operandB, String operation) {
         switch (operation){
             case "+":
                 return operandA + operandB;

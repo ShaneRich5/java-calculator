@@ -19,7 +19,7 @@ public class Main {
 //        Scanner scan = new Scanner(System.in);
 //        expression = scan.nextLine().trim();
 
-        expression = "1 + 5 - 1";
+        expression = "1 + 5 - 4";
 //        expression  = "a * b * c";
 //        expression = "a + b - c * d / e < f > g >= h <= i == j";
 

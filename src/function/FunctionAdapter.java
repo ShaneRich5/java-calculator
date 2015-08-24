@@ -18,8 +18,14 @@ public final class FunctionAdapter {
         return expressions;
     }
 
+    /**
+     * Consider fly weight approach for constructing trees
+     *
+     * @return
+     */
     public Tree buildTree() {
         // invalid list
+        // should probably use a factory here
         if (expressions.size() <= 0)
             return NullTree.getInstance();
 
@@ -34,6 +40,7 @@ public final class FunctionAdapter {
 
         // it is an operand
         if (1 == expressions.size()) {
+            // check if value is brackets (variable with no spaces)
             return Node.newInstance(expressions.remove(0)); // pop it and return as new node
         }
 
@@ -47,6 +54,22 @@ public final class FunctionAdapter {
         }
 
         return node;
+    }
+
+    /**
+     * Bracketed functions should be added without spaces,
+     * for example (a - b) * c should be (a-b) * c so the above
+     * method prioritizes the bracketed part
+     *
+     * Two methods in the FunctionParser should be created to serve this purpose,
+     * one to compress the brackets for the inputs and another to expand the brackets
+     * and remove them from the equation.
+     *
+     * @param blob
+     */
+    private Node addBrackets(String blob){
+        // TODO
+        return null;
     }
 
     private int lastIndexOfOperator(List<String> expressions) {
