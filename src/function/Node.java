@@ -3,9 +3,9 @@ package function;
 import util.Util;
 
 /**
- * Created by shane on 8/21/15.
+ * Typical Tree node.
  *
- * If
+ * @author shane
  */
 public class Node {
     private String data;

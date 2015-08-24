@@ -19,4 +19,7 @@ public final class Constants {
     public static final String LESSER = "<";
     public static final String GREATER_EQUAL =">=";
     public static final String LESSER_EQUAL ="<=";
+
+    public static final String BRACKET_OPEN = "(";
+    public static final String BRACKET_CLOSED = ")";
 }

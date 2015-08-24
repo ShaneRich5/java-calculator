@@ -40,7 +40,7 @@ public final class FunctionTree extends Tree {
     //========================================================
     //              Traversal
     //========================================================
-    public void inOrder(Node node){
+    private void inOrder(Node node){
         if (null != node) {
             postOrder(node.getLeft());
             out.println(node.getData());
@@ -48,11 +48,19 @@ public final class FunctionTree extends Tree {
         }
     }
 
-    public void postOrder(Node node){
+    private void postOrder(Node node){
         if (null != node) {
             postOrder(node.getLeft());
             postOrder(node.getRight());
             out.println(node.getData());
+        }
+    }
+
+    private void preOrder(Node node){
+        if (null != node) {
+            out.println(node.getData());
+            preOrder(node.getLeft());
+            preOrder(node.getRight());
         }
     }
 
@@ -60,13 +68,6 @@ public final class FunctionTree extends Tree {
         return null == root;
     }
 
-    public void preOrder(Node node){
-        if (null != node) {
-            out.println(node.getData());
-            preOrder(node.getLeft());
-            preOrder(node.getRight());
-        }
-    }
 
     public void inOrder(){
         if (null != root)
@@ -88,19 +89,12 @@ public final class FunctionTree extends Tree {
         if (validOperations.contains("+"))
             return "Yes";
 
-
-
         FunctionTree tree = FunctionTree.newInstance(this.root); // use a new instance
 
         Node root = tree.getRoot();
 
         if (!root.isLeaf())
             root = calcNode(root.getLeft(), root.getRight(), root.getData());
-//            root = Node.newInstance(
-//                    String.valueOf(
-//                            calculate(root.getLeft(), root.getRight(), root.getData())
-//                    )
-//            );
 
         return root.getData();
     }
