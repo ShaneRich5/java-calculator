@@ -4,10 +4,6 @@ package function;
  * Created by shane on 8/21/15.
  */
 public final class FunctionParser {
-    public static final String ADDITION = "[+]";
-    public static final String SUBTRACTION = "[-]";
-    public static final String DIVISION = "[/]";
-    public static final String MULTIPLICATION = "[*]";
 
     private String equation;
 
@@ -35,18 +31,18 @@ public final class FunctionParser {
     }
 
     public String[] splitMultiplication(){
-        return equation.split(MULTIPLICATION);
+        return equation.split(Constants.MULTIPLICATION);
     }
 
     public String[] splitAddition(){
-        return equation.split(ADDITION);
+        return equation.split(Constants.ADDITION);
     }
 
     public String[] splitSubtraction(){
-        return equation.split(SUBTRACTION);
+        return equation.split(Constants.SUBTRACTION);
     }
 
     public String[] splitDivision(){
-        return equation.split(DIVISION);
+        return equation.split(Constants.DIVISION);
     }
 }

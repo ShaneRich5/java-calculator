@@ -2,6 +2,8 @@ package function;
 
 import util.Util;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Function;
 
 import static java.lang.System.out;
@@ -10,6 +12,7 @@ import static java.lang.System.out;
  * Created by shane on 8/21/15.
  */
 public final class FunctionTree extends Tree {
+
     private Node root;
 
     private FunctionTree(Node root) {
@@ -75,6 +78,9 @@ public final class FunctionTree extends Tree {
     }
 
     public String execute(){
+        List<String> validOperations = new ArrayList<>();
+        validOperations.add(Constants);
+
         FunctionTree tree = FunctionTree.newInstance(this.root); // use a new instance
 
         Node root = tree.getRoot();

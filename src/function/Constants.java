@@ -8,6 +8,12 @@ public final class Constants {
         throw new AssertionError();
     }
 
+    public static final String ADDITION = "[+]";
+    public static final String SUBTRACTION = "[-]";
+    public static final String DIVISION = "[/]";
+    public static final String MULTIPLICATION = "[*]";
+
+
     public static final String EQUALS = "==";
     public static final String GREATER = ">";
     public static final String LESSER = "<";
