@@ -1,7 +1,9 @@
 package function;
 
 /**
- * Created by shane on 8/24/15.
+ * System Constants
+ *
+ * @author shane on 8/24/15.
  */
 public final class Constants {
     private Constants(){
@@ -12,7 +14,6 @@ public final class Constants {
     public static final String SUBTRACTION = "[-]";
     public static final String DIVISION = "[/]";
     public static final String MULTIPLICATION = "[*]";
-
 
     public static final String EQUALS = "==";
     public static final String GREATER = ">";

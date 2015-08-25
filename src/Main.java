@@ -13,40 +13,99 @@ import static java.lang.System.out;
 public class Main {
 
     public static void main(String[] args) {
+        String expression = "(5+6)";
+
+        out.print(expression.replaceAll(".(?=.)", "$0 "));
+
+//        out.println("Expression: " + expression);
+//
+//        String[] results = expression.split("\\s+");
+//
+//        out.println("Array: " + Arrays.toString(results));
+//
+//        Tree tree = FunctionAdapter.newInstance(results).buildTree();
+//
+//        if (tree instanceof NullTree)
+//            out.println("Unable to create tree");
+//        else {
+//            ((FunctionTree) tree).postOrder();
+//            out.print("Results: " + ((FunctionTree) tree).execute());
+//        }
+    }
+
+    public static void testTree3(){
+        String expression = "5 + 6 * 2";
+
+        out.println("Expression: " + expression);
+
+        String[] results = expression.split("\\s+");
+
+        out.println("Array: " + Arrays.toString(results));
+
+        Tree tree = FunctionAdapter.newInstance(results).buildTree();
+
+        if (tree instanceof NullTree)
+            out.println("Unable to create tree");
+        else {
+            ((FunctionTree) tree).postOrder();
+            out.print("Results: " + ((FunctionTree) tree).execute());
+        }
+    }
+
+    public static void testTree2(){
+
         String expression = null;
 
-        out.println("Enter an expression: ");
-//        Scanner scan = new Scanner(System.in);
-//        expression = scan.nextLine().trim();
-
-        expression = "5 + 4 - 2";
+        expression = "5 + (4+4) ";
 //        expression  = "a * b * c";
 //        expression = "a + b - c * d / e < f > g >= h <= i == j";
 
-        String[] tokens = FunctionParser.newInstance(expression).tokenify();
+        String[] tokens = FunctionParser.tokenize(expression);
 
-        FunctionAdapter adapter = new FunctionAdapter(tokens);
+        out.println(Arrays.toString(tokens));
 
-        Tree tree = adapter.buildTree();
+        Tree tree = FunctionAdapter.newInstance(tokens).buildTree();
 
         if (tree instanceof NullTree) {
             out.print("Nothing entered");
             return;
         }
 
+        ((FunctionTree) tree).postOrder();
+    }
+
+    public static void testTree(){
+        String expression = null;
+
+        out.println("Enter an expression: ");
+//        Scanner scan = new Scanner(System.in);
+//        expression = scan.nextLine().trim();
+
+//        String[] t = "2-2+-2".split("(?=[-+*/()])|(?<=[^-+*/][-+*/])|(?<=[()])");
+
+//        out.print(Arrays.toString(t));
+
+        expression = "5 + 4 +  -2";
+//        expression  = "a * b * c";
+//        expression = "a + b - c * d / e < f > g >= h <= i == j";
+
+        String[] tokens = FunctionParser.tokenize(expression);
+
+        out.println(Arrays.toString(tokens));
+
+        Tree tree = FunctionAdapter.newInstance(tokens).buildTree();
+
+        if (tree instanceof NullTree) {
+            out.print("Nothing entered");
+            return;
+        }
+
+        ((FunctionTree) tree).postOrder();
+
         String result = ((FunctionTree) tree).execute();
 
         out.print("Result is " + result);
-//        List<String> testList = new ArrayList<>(Arrays.asList(tokens));
 
-//        out.println("Test list: " + testList.toString());
-//        out.println("Index of last * " + testList.lastIndexOf("*"));
-
-//        out.print(Arrays.toString(res));
-
-//        ((FunctionTree) tree).postOrder();
-
-//        out.print("Result = " + ((FunctionTree) tree).execute());
     }
 
     public static void testFunctionTree() {

@@ -10,8 +10,12 @@ import java.util.*;
 public final class FunctionAdapter {
     private final List<String> expressions;
 
-    public FunctionAdapter(String[] expressions) {
-        this.expressions = new ArrayList<>(Arrays.asList(expressions));
+    public FunctionAdapter(List<String> expressions) {
+        this.expressions = expressions;
+    }
+
+    public static FunctionAdapter newInstance(String[] expressions) {
+        return new FunctionAdapter(new ArrayList<>(Arrays.asList(expressions)));
     }
 
     public List<String> getExpressions(){
@@ -39,10 +43,14 @@ public final class FunctionAdapter {
         Node node = null;
 
         // it is an operand
-        if (1 == expressions.size()) {
+//        if (1 == expressions.size())
             // check if value is brackets (variable with no spaces)
-            return Node.newInstance(expressions.remove(0)); // pop it and return as new node
-        }
+//            return Node.newInstance(expressions.remove(0)); // pop it and return as new node
+
+
+        // needs testing, not sure how correct this is
+        if (1 == expressions.size())
+            return expandBrackets(expressions.remove(0));
 
         // indexes of the various operations
         int index = lastIndexOfOperator(expressions);
@@ -65,11 +73,40 @@ public final class FunctionAdapter {
      * one to compress the brackets for the inputs and another to expand the brackets
      * and remove them from the equation.
      *
-     * @param blob
+     * @param   expression
      */
-    private Node addBrackets(String blob){
-        // TODO
-        return null;
+    private Node expandBrackets(String expression){
+        int indexOpen = expression.indexOf(Constants.BRACKET_OPEN);
+        int indexClose = expression.lastIndexOf(Constants.BRACKET_CLOSED);
+
+        // this is only true if they are -1
+        // which means no brackets were present
+        if (indexOpen == indexClose)
+            return Node.newInstance(expression);
+
+        // if the brackets do not match up
+        if ((indexOpen > indexClose) || (indexOpen != 0 ) || (indexClose != expression.length() - 1))
+            throw new UnsupportedOperationException();
+
+        StringBuilder bracketedString = new StringBuilder(expression);
+
+        bracketedString.deleteCharAt(0);
+        bracketedString.deleteCharAt(bracketedString.length() - 1);
+
+        String outerBracketsRemoved = bracketedString.toString();
+
+        // check if contains inner brackets
+        indexOpen = expression.indexOf(Constants.BRACKET_OPEN);
+        indexClose = expression.lastIndexOf(Constants.BRACKET_CLOSED);
+
+        if (indexOpen > indexClose)
+            throw new UnsupportedOperationException();
+
+        String temp = (indexOpen != indexClose) ? outerBracketsRemoved.substring(indexOpen, indexClose) : "";
+        String beforeSplit = FunctionParser.insertSpaces(temp.substring(0, indexOpen - 1));
+        String afterSplit = FunctionParser.insertSpaces(temp.substring(indexClose + 1, outerBracketsRemoved.length() - 1));
+
+        return findOperands(Collections.singletonList(beforeSplit + temp + afterSplit));
     }
 
     private int lastIndexOfOperator(List<String> expressions) {
@@ -97,4 +134,5 @@ public final class FunctionAdapter {
         }
         return -1;
     }
+
 }
