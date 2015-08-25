@@ -3,34 +3,38 @@ import component_pattern_test.Song;
 import component_pattern_test.SongComponent;
 import component_pattern_test.SongGroup;
 import function.*;
-import function_test.Function;
-import util.Util;
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
 
 import java.util.*;
 
 import static java.lang.System.out;
 
-public class Main {
+public class Main extends Application {
+
+    Button button;
 
     public static void main(String[] args) {
-        String expression = "(5+6)";
+        launch(args);
+    }
 
-        out.print(expression.replaceAll(".(?=.)", "$0 "));
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        primaryStage.setTitle("Window Tile");
 
-//        out.println("Expression: " + expression);
-//
-//        String[] results = expression.split("\\s+");
-//
-//        out.println("Array: " + Arrays.toString(results));
-//
-//        Tree tree = FunctionAdapter.newInstance(results).buildTree();
-//
-//        if (tree instanceof NullTree)
-//            out.println("Unable to create tree");
-//        else {
-//            ((FunctionTree) tree).postOrder();
-//            out.print("Results: " + ((FunctionTree) tree).execute());
-//        }
+        button = new Button();
+        button.setText("Click me");
+
+        StackPane layout = new StackPane();
+        layout.getChildren().add(button);
+
+        Scene scene = new Scene(layout, 300, 250);
+
+        primaryStage.setScene(scene);
+        primaryStage.show();
     }
 
     public static void testTree3(){
