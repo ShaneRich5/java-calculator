@@ -8,6 +8,7 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import ui.components.dialogs.AlertBox;
+import ui.components.dialogs.ConfirmBox;
 
 
 /**
@@ -23,13 +24,18 @@ public class Calculator extends Application{
         Button buttonOne = new Button("Go to scene 2");
         Button buttonTwo = new Button("Scene two");
         Button alertDialog = new Button("Display alert");
+        Button confirmDialog = new Button("Confirm");
 
         buttonOne.setOnAction(e -> window.setScene(sceneTwo));
         buttonTwo.setOnAction(e -> window.setScene(sceneOne));
         alertDialog.setOnAction(e -> AlertBox.display("ALERT!", "This is an alert box"));
+        confirmDialog.setOnAction(e -> {
+            boolean result = ConfirmBox.display("Confirmation Box", "Chose an answer");
+            System.out.println(result);
+        });
 
         VBox layoutOne = new VBox(20);
-        layoutOne.getChildren().addAll(labelOne, buttonOne, alertDialog);
+        layoutOne.getChildren().addAll(labelOne, buttonOne, alertDialog, confirmDialog);
 
         sceneOne = new Scene(layoutOne, 200, 200);
 

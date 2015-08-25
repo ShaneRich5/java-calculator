@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="96bcf986-ac19-4544-880e-293565b45094" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ui/components/AlertBox.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ui/components/Calculator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FunctionImplementation/function/FunctionAdapter.class" afterPath="$PROJECT_DIR$/out/production/FunctionImplementation/function/FunctionAdapter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FunctionImplementation/function/FunctionParser.class" afterPath="$PROJECT_DIR$/out/production/FunctionImplementation/function/FunctionParser.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FunctionImplementation/Main.class" afterPath="$PROJECT_DIR$/out/production/FunctionImplementation/Main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/components/Calculator.java" afterPath="$PROJECT_DIR$/src/ui/components/Calculator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/components/dialogs/ConfirmBox.java" afterPath="$PROJECT_DIR$/src/ui/components/dialogs/ConfirmBox.java" />
     </list>
     <ignored path="FunctionImplementation.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -53,8 +48,20 @@
       <file leaf-file-name="Calculator.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ui/components/Calculator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5707472">
-              <caret line="30" column="71" selection-start-line="30" selection-start-column="71" selection-end-line="30" selection-end-column="71" />
+            <state vertical-scroll-proportion="0.53418124">
+              <caret line="37" column="86" selection-start-line="37" selection-start-column="86" selection-end-line="37" selection-end-column="86" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ConfirmBox.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ui/components/dialogs/ConfirmBox.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="45" column="22" selection-start-line="45" selection-start-column="22" selection-end-line="45" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -63,7 +70,7 @@
         </entry>
       </file>
       <file leaf-file-name="AlertBox.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ui/components/AlertBox.java">
+        <entry file="file://$PROJECT_DIR$/src/ui/components/dialogs/AlertBox.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="35" column="29" selection-start-line="35" selection-start-column="29" selection-end-line="35" selection-end-column="29" />
@@ -113,6 +120,7 @@
         <option value="$PROJECT_DIR$/src/function/FunctionAdapter.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/ui/components/AlertBox.java" />
+        <option value="$PROJECT_DIR$/src/ui/components/dialogs/ConfirmBox.java" />
         <option value="$PROJECT_DIR$/src/ui/components/Calculator.java" />
       </list>
     </option>
@@ -210,6 +218,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FunctionImplementation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FunctionImplementation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dialogs" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -608,12 +638,12 @@
       <workItem from="1440434999389" duration="768000" />
       <workItem from="1440438821997" duration="5384000" />
       <workItem from="1440467086781" duration="10949000" />
-      <workItem from="1440507263007" duration="4101000" />
+      <workItem from="1440507263007" duration="4661000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="99066000" />
+    <option name="totallyTimeSpent" value="99626000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
@@ -693,34 +723,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/function/Node.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
-          <folding>
-            <element signature="e#210#211#0" expanded="false" />
-            <element signature="e#242#243#0" expanded="false" />
-            <element signature="e#448#449#0" expanded="false" />
-            <element signature="e#485#486#0" expanded="false" />
-            <element signature="e#528#529#0" expanded="false" />
-            <element signature="e#558#559#0" expanded="false" />
-            <element signature="e#589#590#0" expanded="false" />
-            <element signature="e#616#617#0" expanded="false" />
-            <element signature="docComment;method#setRight#0;class#Node#0" expanded="false" />
-            <element signature="e#1517#1518#0" expanded="false" />
-            <element signature="e#1544#1545#0" expanded="false" />
-            <element signature="e#1574#1575#0" expanded="false" />
-            <element signature="e#1602#1603#0" expanded="false" />
-            <element signature="e#1634#1635#0" expanded="false" />
-            <element signature="e#1700#1701#0" expanded="false" />
-            <element signature="e#1828#1829#0" expanded="false" />
-            <element signature="e#1876#1877#0" expanded="false" />
-            <element signature="e#1908#1909#0" expanded="false" />
-            <element signature="e#1955#1956#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/function/FunctionParser.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1314,7 +1316,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/components/AlertBox.java">
+    <entry file="file://$PROJECT_DIR$/src/ui/components/dialogs/AlertBox.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="35" column="29" selection-start-line="35" selection-start-column="29" selection-end-line="35" selection-end-column="29" />
@@ -1324,10 +1326,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/components/dialogs/ConfirmBox.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="45" column="22" selection-start-line="45" selection-start-column="22" selection-end-line="45" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/ui/components/Calculator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5707472">
-          <caret line="30" column="71" selection-start-line="30" selection-start-column="71" selection-end-line="30" selection-end-column="71" />
+        <state vertical-scroll-proportion="0.53418124">
+          <caret line="37" column="86" selection-start-line="37" selection-start-column="86" selection-end-line="37" selection-end-column="86" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
