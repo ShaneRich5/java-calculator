@@ -1,52 +1,44 @@
 package ui.components;
 
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.layout.StackPane;
-import javafx.scene.layout.VBox;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
-import ui.components.dialogs.AlertBox;
-import ui.components.dialogs.ConfirmBox;
 
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * Created by shane on 8/25/15.
  */
-public class Calculator extends Application{
+public class Calculator extends Application {
 
-    Scene sceneOne, sceneTwo;
+    private TextField textField = new TextField();
+    private Stage window;
 
-    @Override
-    public void start(Stage window) throws Exception {
-        Label labelOne = new Label("Welcome to scene one");
-        Button buttonOne = new Button("Go to scene 2");
-        Button buttonTwo = new Button("Scene two");
-        Button alertDialog = new Button("Display alert");
-        Button confirmDialog = new Button("Confirm");
+    @Override public void start(Stage primaryStage) throws Exception {
 
-        buttonOne.setOnAction(e -> window.setScene(sceneTwo));
-        buttonTwo.setOnAction(e -> window.setScene(sceneOne));
-        alertDialog.setOnAction(e -> AlertBox.display("ALERT!", "This is an alert box"));
-        confirmDialog.setOnAction(e -> {
-            boolean result = ConfirmBox.display("Confirmation Box", "Chose an answer");
-            System.out.println(result);
-        });
+        Parent root = FXMLLoader.load(getClass().getResource("views/CalculatorOverview.fxml"));
 
-        VBox layoutOne = new VBox(20);
-        layoutOne.getChildren().addAll(labelOne, buttonOne, alertDialog, confirmDialog);
+        Scene scene = new Scene(root);
 
-        sceneOne = new Scene(layoutOne, 200, 200);
-
-
-        StackPane layoutTwo = new StackPane();
-        layoutTwo.getChildren().add(buttonTwo);
-
-        sceneTwo = new Scene(layoutTwo, 600, 300);
-
-        window.setScene(sceneOne);
-        window.setTitle("Calculator");
+        window = primaryStage;
+        window.setScene(scene);
+        window.setTitle(Calculator.class.getSimpleName());
         window.show();
+    }
+
+    /**
+     * @param args  command line arguments
+     */
+    public static void main(String[] args) {
+        launch(args);
     }
 }
