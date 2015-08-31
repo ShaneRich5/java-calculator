@@ -1,0 +1,12 @@
+.operator-btn {
+    -fx-background-color: #D1D1D1;
+}
+
+.equal-btn {
+    -fx-background-color: #4084F2;
+    -fx-text-fill: #FFF;
+}
+
+.operand-btn {
+    -fx-background-color: #FFFFFF;
+}

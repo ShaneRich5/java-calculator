@@ -78,4 +78,28 @@ public class CalculatorController implements Initializable {
             displayField.setText(((FunctionTree) tree).execute());
         }
     }
+
+    public void handleBracketAction(ActionEvent actionEvent) {
+        // TODO
+    }
+
+    public void handleUndoAction(ActionEvent actionEvent) {
+        String equation = displayField.getText().trim();
+
+        int length = equation.length();
+
+        String lastChar = equation.substring(length - 1);
+
+        if (length <= 1) {
+            displayField.setText(Constants.EMPTY_STRING);
+            return;
+        }
+
+        if (Util.isNumeric(lastChar))
+            equation = equation.substring(0, length - 1);
+        else
+            equation = equation.substring(0, length - 3);
+
+        displayField.setText(equation);
+    }
 }
