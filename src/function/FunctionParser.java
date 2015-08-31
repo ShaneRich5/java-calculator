@@ -31,13 +31,13 @@ public final class FunctionParser {
     /**
      * Compress the outer most brackets
      *
-     * @param expression
-     * @return
+     * @param expression a typical mathematical equation
+     * @return          the same equation, with the inner brackets containing no spaces
      */
     public static String compressBrackets(String expression) {
 
         int openBracketIndex = expression.indexOf(Constants.BRACKET_OPEN);
-        int closeBracketIndex = expression.lastIndexOf(Constants.BRACKET_CLOSED);
+        int closeBracketIndex = expression.indexOf(Constants.BRACKET_CLOSED);
 
         // no brackets found
         if (openBracketIndex == closeBracketIndex)
@@ -50,13 +50,9 @@ public final class FunctionParser {
         if (openBracketIndex >= closeBracketIndex)
             throw new UnsupportedOperationException();
 
-        String beforeBracket = expression.substring(0, openBracketIndex);
-        String afterBracket = expression.substring(closeBracketIndex + 1, expression.length());
+        return expression.substring(0, openBracketIndex)
+                + expression.substring(openBracketIndex, closeBracketIndex + 1).replaceAll("\\s+", "")
+                + compressBrackets(expression.substring(closeBracketIndex + 1, expression.length()));
 
-        String bracketedString = expression
-                .substring(openBracketIndex, closeBracketIndex + 1)
-                .replaceAll("\\s+", "");
-
-        return beforeBracket + bracketedString + afterBracket;
     }
 }

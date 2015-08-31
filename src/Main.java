@@ -31,7 +31,7 @@ public class Main {
     }
 
     public static void testTree3(){
-        String expression = "(5+6) * 2";
+        String expression = "(5+6) * 2 * (1+2)";
 
         out.println("Expression: " + expression);
 

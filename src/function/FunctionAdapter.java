@@ -10,16 +10,16 @@ import java.util.*;
 public final class FunctionAdapter {
     private final List<String> expressions;
 
-    public FunctionAdapter(List<String> expressions) {
+    private FunctionAdapter(List<String> expressions) {
+
         this.expressions = expressions;
+
     }
 
     public static FunctionAdapter newInstance(String[] expressions) {
-        return new FunctionAdapter(new ArrayList<>(Arrays.asList(expressions)));
-    }
 
-    public List<String> getExpressions(){
-        return expressions;
+        return new FunctionAdapter(new ArrayList<>(Arrays.asList(expressions)));
+
     }
 
     /**
@@ -28,6 +28,7 @@ public final class FunctionAdapter {
      * @return
      */
     public Tree buildTree() {
+
         // invalid list
         // should probably use a factory here
         if (expressions.size() <= 0)
@@ -37,16 +38,8 @@ public final class FunctionAdapter {
     }
 
     private Node findOperands(List<String> expressions){
-//        System.out.println("Current expressions:" + expressions.size() + " " + expressions.toString());
-//        System.out.println(" index: " + lastIndexOfOperator(expressions));
 
         Node node = null;
-
-        // it is an operand
-//        if (1 == expressions.size())
-            // check if value is brackets (variable with no spaces)
-//            return Node.newInstance(expressions.remove(0)); // pop it and return as new node
-
 
         // needs testing, not sure how correct this is
         if (1 == expressions.size())
@@ -60,7 +53,6 @@ public final class FunctionAdapter {
             node.setRight(findOperands(expressions.subList(index, expressions.size())));
             node.setLeft(findOperands(expressions.subList(0, index)));
         }
-
         return node;
     }
 
@@ -76,6 +68,7 @@ public final class FunctionAdapter {
      * @param   expression
      */
     private Node expandBrackets(String expression){
+
         int indexOpen = expression.indexOf(Constants.BRACKET_OPEN);
         int indexClose = expression.lastIndexOf(Constants.BRACKET_CLOSED);
 
@@ -96,24 +89,19 @@ public final class FunctionAdapter {
 
         System.out.println("In adapter: " + FunctionParser.insertSpaces(expression));
 
-        return findOperands(new ArrayList<>(Arrays.asList(FunctionParser.tokenize(FunctionParser.insertSpaces(expression)))));
-        // brackets ave incorrect format
-//        if (indexOpen > indexClose)
-//            throw new UnsupportedOperationException();
-//
-//        if (indexOpen != indexClose) {
-//            String temp = expression.substring(indexOpen, indexClose + 1);
-//            String beforeSplit = FunctionParser.insertSpaces(expression.substring(0, indexOpen));
-//            String afterSplit = FunctionParser.insertSpaces(expression.substring(indexClose + 1, expression.length()));
-//
-//            System.out.println("Singleton list: " + Collections.singletonList(beforeSplit + temp + afterSplit));
-//
-////            return findOperands(Collections.singletonList(beforeSplit + temp + afterSplit));
-//            expression = beforeSplit + " " + temp + " " + afterSplit;
-//        } else {
-//            expression = FunctionParser.insertSpaces(expression);
-//        }
-//        return findOperands(new ArrayList<>(Arrays.asList(FunctionParser.tokenize(expression))));
+        if (indexOpen > indexClose)
+            throw new UnsupportedOperationException();
+
+        if (indexOpen != indexClose) {
+            String temp = expression.substring(indexOpen, indexClose + 1);
+            String beforeSplit = FunctionParser.insertSpaces(expression.substring(0, indexOpen));
+            String afterSplit = FunctionParser.insertSpaces(expression.substring(indexClose + 1, expression.length()));
+
+            expression = beforeSplit + " " + temp + " " + afterSplit;
+        } else {
+            expression = FunctionParser.insertSpaces(expression);
+        }
+        return findOperands(new ArrayList<>(Arrays.asList(FunctionParser.tokenize(expression))));
     }
 
     /**
@@ -154,5 +142,4 @@ public final class FunctionAdapter {
         }
         return -1;
     }
-
 }
