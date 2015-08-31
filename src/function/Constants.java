@@ -10,6 +10,8 @@ public final class Constants {
         throw new AssertionError();
     }
 
+    public static final String EMPTY_STRING = "";
+
     public static final String ADDITION = "[+]";
     public static final String SUBTRACTION = "[-]";
     public static final String DIVISION = "[/]";

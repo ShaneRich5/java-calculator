@@ -1,6 +1,6 @@
 package function;
 
-import util.Util;
+import function.util.Util;
 
 /**
  * Created by shane on 8/21/15.

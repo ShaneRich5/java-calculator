@@ -1,6 +1,6 @@
 package function;
 
-import util.Util;
+import function.util.Util;
 
 /**
  * Typical Tree node.

@@ -1,6 +1,7 @@
 package ui.components.controllers;
 
 import function.*;
+import function.util.Util;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -18,7 +19,7 @@ public class CalculatorController implements Initializable {
 
     @FXML private TextField displayField;
 
-    private String lastInput;
+    private String lastInput = Constants.EMPTY_STRING;
     private static boolean errorStatus;
 
     @Override public void initialize(URL location, ResourceBundle resources) {
@@ -27,21 +28,37 @@ public class CalculatorController implements Initializable {
 
 
     @FXML public void handleOperandAction(ActionEvent actionEvent) {
-        String digit = ((Button) actionEvent.getSource()).getText();
-        String equation = displayField.getText();
+        insertNewDigit(((Button) actionEvent.getSource()).getText());
+    }
 
-        equation += digit;
+    private void insertNewDigit(String digit) {
+        if (Util.isNumeric(lastInput)) {
+            lastInput += digit;
+        } else { // resets the last input variable
+            lastInput = digit;
+        }
 
-        displayField.setText(equation);
+        // updates display
+        displayField.setText(
+                displayField.getText() + digit
+        );
     }
 
     @FXML public void handleOperatorAction(ActionEvent actionEvent) {
-        String operator = ((Button) actionEvent.getSource()).getText();
+        insertNewOperator(((Button) actionEvent.getSource()).getText());
+    }
+
+    private void insertNewOperator(String operator) {
         String equation = displayField.getText();
+        // if the last input was numeric
+        // replace it with an operator and update the display
 
-        equation += " " + operator + " ";
-
-        displayField.setText(equation);
+        if (!Util.isNumeric(lastInput)) {
+            // remove the operator and surrounding white spaces
+            equation = equation.trim().substring(0, equation.length() - 3);
+        }
+        displayField.setText(equation + " " + operator + " ");
+        lastInput = operator;
     }
 
     @FXML public void handleEqualAction(ActionEvent actionEvent) {
