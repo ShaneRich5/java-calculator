@@ -80,7 +80,20 @@ public class CalculatorController implements Initializable {
     }
 
     public void handleBracketAction(ActionEvent actionEvent) {
-        // TODO
+        insertBracket(((Button) actionEvent.getSource()).getText());
+    }
+
+    private void insertBracket(String bracket) {
+
+        switch (bracket){
+            case "(":
+
+                break;
+            case ")":
+
+                break;
+        }
+        displayField.setText(displayField.getText() + bracket);
     }
 
     public void handleUndoAction(ActionEvent actionEvent) {

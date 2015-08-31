@@ -30,23 +30,31 @@ public final class FunctionParser {
 //        return res;
 //    }
 
-    public String getEquation(){
-        return equation;
-    }
+    /**
+     * Compress the outer most brackets
+     *
+     * @param expression
+     * @return
+     */
+    public static String compressOuterBrackets(String expression) {
 
-    public String[] splitMultiplication(){
-        return equation.split(Constants.MULTIPLICATION);
-    }
+        int openBracketIndex = expression.indexOf(Constants.BRACKET_OPEN);
+        int closeBracketIndex = expression.lastIndexOf(Constants.BRACKET_CLOSED);
 
-    public String[] splitAddition(){
-        return equation.split(Constants.ADDITION);
-    }
+        // no brackets found
+        if (openBracketIndex == closeBracketIndex)
+            return expression;
 
-    public String[] splitSubtraction(){
-        return equation.split(Constants.SUBTRACTION);
-    }
+        if (openBracketIndex >= closeBracketIndex)
+            throw new UnsupportedOperationException();
 
-    public String[] splitDivision(){
-        return equation.split(Constants.DIVISION);
+        String beforeBracket = expression.substring(0, openBracketIndex);
+        String afterBracket = expression.substring(closeBracketIndex + 1, expression.length() - 1);
+
+        String bracketedString = expression
+                .substring(openBracketIndex, closeBracketIndex + 1)
+                .replaceAll("\\s+", "");
+
+        return beforeBracket + bracketedString + afterBracket;
     }
 }

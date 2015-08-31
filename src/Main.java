@@ -13,34 +13,20 @@ import java.util.*;
 
 import static java.lang.System.out;
 
-public class Main extends Application {
+public class Main {
 
     Button button;
 
     public static void main(String[] args) {
-        launch(args);
-    }
-
-    @Override
-    public void start(Stage primaryStage) throws Exception {
-        primaryStage.setTitle("Window Tile");
-
-        button = new Button();
-        button.setText("Click me");
-
-        StackPane layout = new StackPane();
-        layout.getChildren().add(button);
-
-        Scene scene = new Scene(layout, 300, 250);
-
-        primaryStage.setScene(scene);
-        primaryStage.show();
+        testTree3();
     }
 
     public static void testTree3(){
-        String expression = "5 + 6 * 2";
+        String expression = "(5 + 6) * 2";
 
         out.println("Expression: " + expression);
+
+        expression = FunctionParser.compressOuterBrackets(expression);
 
         String[] results = expression.split("\\s+");
 
