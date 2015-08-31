@@ -28,7 +28,6 @@ public final class FunctionAdapter {
      * @return
      */
     public Tree buildTree() {
-
         // invalid list
         // should probably use a factory here
         if (expressions.size() <= 0)

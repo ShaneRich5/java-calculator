@@ -20,7 +20,6 @@ import java.util.List;
  */
 public class Calculator extends Application {
 
-    private TextField textField = new TextField();
     private Stage window;
 
     @Override public void start(Stage primaryStage) throws Exception {
