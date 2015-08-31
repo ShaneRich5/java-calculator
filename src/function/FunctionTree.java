@@ -1,5 +1,7 @@
 package function;
 
+import function.exceptions.ZeroDivisionException;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -95,24 +97,6 @@ public final class FunctionTree extends Tree {
         return root.getData();
     }
 
-    private Double calculate(Node left, Node right, String operation) {
-        if (left.isLeaf() && right.isLeaf()){
-            try {
-                // if leaf
-                return performOperation(
-                        Double.parseDouble(left.getData()),
-                        Double.parseDouble(right.getData()),
-                        operation);
-            } catch (UnsupportedOperationException e) {
-                return Double.NaN;
-            } catch (Exception e) {
-                return Double.NaN;
-            }
-        } else {
-            return Double.NaN;
-        }
-    }
-
     private Node calcNode(Node leftNode, Node rightNode, String operation){
         System.out.println(leftNode.getData() + operation + rightNode.getData());
 
@@ -130,6 +114,8 @@ public final class FunctionTree extends Tree {
             case "-":
                 return operandA - operandB;
             case "/":
+                if (0 == operandB)
+                    throw new ZeroDivisionException();
                 return operandA / operandB;
             case "*":
                 return operandA * operandB;
