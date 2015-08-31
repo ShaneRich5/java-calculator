@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="96bcf986-ac19-4544-880e-293565b45094" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/function/FunctionAdapter.java" afterPath="$PROJECT_DIR$/src/function/FunctionAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/function/FunctionParser.java" afterPath="$PROJECT_DIR$/src/function/FunctionParser.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
     </list>
     <ignored path="FunctionImplementation.iws" />
@@ -31,7 +29,7 @@
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.4064516">
-              <caret line="33" column="46" selection-start-line="33" selection-start-column="46" selection-end-line="33" selection-end-column="46" />
+              <caret line="33" column="45" selection-start-line="33" selection-start-column="45" selection-end-line="33" selection-end-column="45" />
               <folding>
                 <element signature="method#testTree#0;class#Main#0" expanded="false" />
                 <element signature="method#testFunctionTree#0;class#Main#0" expanded="false" />
@@ -45,7 +43,7 @@
         <entry file="file://$PROJECT_DIR$/src/function/FunctionParser.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="55" column="8" selection-start-line="55" selection-start-column="8" selection-end-line="55" selection-end-column="8" />
+              <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
               <folding>
                 <element signature="e#315#316#0" expanded="true" />
                 <element signature="e#374#375#0" expanded="true" />
@@ -712,12 +710,12 @@
       <workItem from="1440636804362" duration="14000" />
       <workItem from="1440767729171" duration="1045000" />
       <workItem from="1440831097318" duration="1491000" />
-      <workItem from="1440957847020" duration="31602000" />
+      <workItem from="1440957847020" duration="31789000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="140169000" />
+    <option name="totallyTimeSpent" value="140356000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1855" height="1056" extended-state="6" />
@@ -1212,7 +1210,7 @@
     <entry file="file://$PROJECT_DIR$/src/function/FunctionParser.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="55" column="8" selection-start-line="55" selection-start-column="8" selection-end-line="55" selection-end-column="8" />
+          <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
           <folding>
             <element signature="e#315#316#0" expanded="true" />
             <element signature="e#374#375#0" expanded="true" />
@@ -1231,7 +1229,7 @@
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.4064516">
-          <caret line="33" column="46" selection-start-line="33" selection-start-column="46" selection-end-line="33" selection-end-column="46" />
+          <caret line="33" column="45" selection-start-line="33" selection-start-column="45" selection-end-line="33" selection-end-column="45" />
           <folding>
             <element signature="method#testTree#0;class#Main#0" expanded="false" />
             <element signature="method#testFunctionTree#0;class#Main#0" expanded="false" />
