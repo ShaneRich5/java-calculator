@@ -28,7 +28,6 @@ public class Calculator extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("views/CalculatorOverview.fxml"));
 
         Scene scene = new Scene(root);
-        scene.getStylesheets().add("styles/main.css");
 
         window = primaryStage;
         window.setScene(scene);
