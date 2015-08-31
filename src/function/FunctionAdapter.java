@@ -88,27 +88,40 @@ public final class FunctionAdapter {
         if ((indexOpen > indexClose) || (indexOpen != 0 ) || (indexClose != expression.length() - 1))
             throw new UnsupportedOperationException();
 
-        StringBuilder bracketedString = new StringBuilder(expression);
-
-        bracketedString.deleteCharAt(0);
-        bracketedString.deleteCharAt(bracketedString.length() - 1);
-
-        String outerBracketsRemoved = bracketedString.toString();
+        expression = expression.substring(1, expression.length() - 1);
 
         // check if contains inner brackets
         indexOpen = expression.indexOf(Constants.BRACKET_OPEN);
         indexClose = expression.lastIndexOf(Constants.BRACKET_CLOSED);
 
-        if (indexOpen > indexClose)
-            throw new UnsupportedOperationException();
+        System.out.println("In adapter: " + FunctionParser.insertSpaces(expression));
 
-        String temp = (indexOpen != indexClose) ? outerBracketsRemoved.substring(indexOpen, indexClose) : "";
-        String beforeSplit = FunctionParser.insertSpaces(temp.substring(0, indexOpen - 1));
-        String afterSplit = FunctionParser.insertSpaces(temp.substring(indexClose + 1, outerBracketsRemoved.length() - 1));
-
-        return findOperands(Collections.singletonList(beforeSplit + temp + afterSplit));
+        return findOperands(new ArrayList<>(Arrays.asList(FunctionParser.tokenize(FunctionParser.insertSpaces(expression)))));
+        // brackets ave incorrect format
+//        if (indexOpen > indexClose)
+//            throw new UnsupportedOperationException();
+//
+//        if (indexOpen != indexClose) {
+//            String temp = expression.substring(indexOpen, indexClose + 1);
+//            String beforeSplit = FunctionParser.insertSpaces(expression.substring(0, indexOpen));
+//            String afterSplit = FunctionParser.insertSpaces(expression.substring(indexClose + 1, expression.length()));
+//
+//            System.out.println("Singleton list: " + Collections.singletonList(beforeSplit + temp + afterSplit));
+//
+////            return findOperands(Collections.singletonList(beforeSplit + temp + afterSplit));
+//            expression = beforeSplit + " " + temp + " " + afterSplit;
+//        } else {
+//            expression = FunctionParser.insertSpaces(expression);
+//        }
+//        return findOperands(new ArrayList<>(Arrays.asList(FunctionParser.tokenize(expression))));
     }
 
+    /**
+     * Finds the right most operator in the order of precedence
+     *
+     * @param expressions
+     * @return
+     */
     private int lastIndexOfOperator(List<String> expressions) {
         int indexOfMinusSign = lastIndex(expressions, Function.SUBTRACTION);
         int indexOfAddSign = lastIndex(expressions, Function.ADDITION);
@@ -127,6 +140,13 @@ public final class FunctionAdapter {
         return -1;
     }
 
+    /**
+     * Finds the right most match
+     *
+     * @param elements
+     * @param expression
+     * @return
+     */
     private int lastIndex(List<String> elements, String expression){
         for (int i = (elements.size() - 1); i >= 0; i--) {
             if (elements.get(i).equals(expression))

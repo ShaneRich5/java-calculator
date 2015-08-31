@@ -18,19 +18,28 @@ public class Main {
     Button button;
 
     public static void main(String[] args) {
+//        testInsertSpaces();
         testTree3();
     }
 
+    public static void testInsertSpaces() {
+        String expression = "(5+3)";
+
+        out.println("Expression :" + expression);
+
+        out.println("With spaces :" + FunctionParser.insertSpaces(expression));
+    }
+
     public static void testTree3(){
-        String expression = "(5 + 6) * 2";
+        String expression = "(5+6) * 2";
 
         out.println("Expression: " + expression);
 
-        expression = FunctionParser.compressOuterBrackets(expression);
+        expression = FunctionParser.compressBrackets(expression);
 
         String[] results = expression.split("\\s+");
 
-        out.println("Array: " + Arrays.toString(results));
+        out.println("Arrayee: " + Arrays.toString(results));
 
         Tree tree = FunctionAdapter.newInstance(results).buildTree();
 

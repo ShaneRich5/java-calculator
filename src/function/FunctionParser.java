@@ -9,8 +9,6 @@ public final class FunctionParser {
 
     private FunctionParser() { throw new AssertionError(); }
 
-    private String equation;
-
     public static String[] tokenize(String equation){
         return equation.split("\\s+");
     }
@@ -36,7 +34,7 @@ public final class FunctionParser {
      * @param expression
      * @return
      */
-    public static String compressOuterBrackets(String expression) {
+    public static String compressBrackets(String expression) {
 
         int openBracketIndex = expression.indexOf(Constants.BRACKET_OPEN);
         int closeBracketIndex = expression.lastIndexOf(Constants.BRACKET_CLOSED);
@@ -45,11 +43,15 @@ public final class FunctionParser {
         if (openBracketIndex == closeBracketIndex)
             return expression;
 
+        // strips outermost brackets if the initial expression was enclosed by brackets
+        if ((openBracketIndex == 0) && (closeBracketIndex == expression.length() - 1))
+            compressBrackets(expression.substring(1, expression.length() - 2));
+
         if (openBracketIndex >= closeBracketIndex)
             throw new UnsupportedOperationException();
 
         String beforeBracket = expression.substring(0, openBracketIndex);
-        String afterBracket = expression.substring(closeBracketIndex + 1, expression.length() - 1);
+        String afterBracket = expression.substring(closeBracketIndex + 1, expression.length());
 
         String bracketedString = expression
                 .substring(openBracketIndex, closeBracketIndex + 1)
