@@ -1,6 +1,7 @@
 package ui.components.controllers;
 
 import function.*;
+import function.exceptions.MalformedNumberException;
 import function.util.Util;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -20,7 +21,9 @@ public class CalculatorController implements Initializable {
     @FXML private TextField displayField;
 
     private String lastInput = Constants.EMPTY_STRING;
-    private static boolean errorStatus;
+
+    private static boolean errorStatus = false;
+    private static int incompleteBracktCount = 0;
 
     @Override public void initialize(URL location, ResourceBundle resources) {
         // TODO
@@ -68,19 +71,32 @@ public class CalculatorController implements Initializable {
 
         Tree tree = FunctionAdapter.newInstance(tokens).buildTree();
 
+        String result = Constants.ERROR_STRING;
+
+        errorStatus = true;
+
         if (tree instanceof NullTree) {
-            System.out.println("Error");
-            displayField.setText("ERROR");
+            System.out.println(result);
+            displayField.setText(result);
+            errorStatus = false;
         } else {
-            String result = ((FunctionTree) tree).execute();
-            ((FunctionTree) tree).inOrder();
-            System.out.print(" = " + result);
+            try {
+                result = ((FunctionTree) tree).execute();
+                ((FunctionTree) tree).inOrder();
+                System.out.print(" = " + result);
+            } catch(MalformedNumberException e) {
+                System.out.println("Malformed Exception");
+            } catch(NullPointerException e) {
+                System.out.println("NullPointer Exception");
+            }
             displayField.setText(result);
         }
     }
 
     public void handleBracketAction(ActionEvent actionEvent) {
+
         insertBracket(((Button) actionEvent.getSource()).getText());
+
     }
 
     private void insertBracket(String bracket) {
@@ -97,6 +113,7 @@ public class CalculatorController implements Initializable {
     }
 
     public void handleUndoAction(ActionEvent actionEvent) {
+
         String equation = displayField.getText().trim();
 
         int length = equation.length();
@@ -114,5 +131,17 @@ public class CalculatorController implements Initializable {
             equation = equation.substring(0, length - 3);
 
         displayField.setText(equation);
+    }
+
+    public void handleResetAction(ActionEvent actionEvent) {
+        errorStatus = false;
+        displayField.setText(Constants.EMPTY_STRING);
+    }
+
+    private void resetErrorStatus() {
+        if (errorStatus) {
+            errorStatus = false;
+            displayField.setText(Constants.EMPTY_STRING);
+        }
     }
 }
