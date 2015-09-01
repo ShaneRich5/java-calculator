@@ -1,7 +1,7 @@
 package function.exceptions;
 
 /**
- * Created by shane on 8/31/15.
+ * @author shane on 8/31/15.
  */
 public class MalformedNumberException extends RuntimeException {
 

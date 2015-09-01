@@ -90,8 +90,6 @@ public final class FunctionTree extends Tree {
     }
 
     public String execute(){
-        if (validOperations.contains("+"))
-            return "Yes";
 
         FunctionTree tree = FunctionTree.newInstance(this.root); // use a new instance
 
@@ -128,12 +126,5 @@ public final class FunctionTree extends Tree {
             default:
                 throw new UnsupportedOperationException();
         }
-    }
-
-    private boolean operatorIsValid(String operator){
-        for (int i = 0; i < validOperations.size(); i++)
-            if (validOperations.get(i).equals(operator))
-                return true;
-        return false;
     }
 }

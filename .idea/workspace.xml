@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="96bcf986-ac19-4544-880e-293565b45094" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="96bcf986-ac19-4544-880e-293565b45094" name="Default" comment="" />
     <ignored path="FunctionImplementation.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -42,8 +40,8 @@
       <file leaf-file-name="FunctionAdapter.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/function/FunctionAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.0448807">
-              <caret line="27" column="37" selection-start-line="27" selection-start-column="37" selection-end-line="27" selection-end-column="37" />
+            <state vertical-scroll-proportion="1.2875175">
+              <caret line="74" column="26" selection-start-line="74" selection-start-column="26" selection-end-line="74" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -743,12 +741,12 @@
       <workItem from="1440957847020" duration="32246000" />
       <workItem from="1441028608936" duration="5746000" />
       <workItem from="1441038736297" duration="711000" />
-      <workItem from="1441074823155" duration="4956000" />
+      <workItem from="1441074823155" duration="5696000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="152226000" />
+    <option name="totallyTimeSpent" value="152966000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="52" width="927" height="1028" extended-state="4" />
@@ -1232,8 +1230,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/function/FunctionAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.0448807">
-          <caret line="27" column="37" selection-start-line="27" selection-start-column="37" selection-end-line="27" selection-end-column="37" />
+        <state vertical-scroll-proportion="1.2875175">
+          <caret line="74" column="26" selection-start-line="74" selection-start-column="26" selection-end-line="74" selection-end-column="26" />
           <folding />
         </state>
       </provider>

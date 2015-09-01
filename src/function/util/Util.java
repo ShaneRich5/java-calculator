@@ -1,7 +1,9 @@
 package function.util;
 
+import function_test.Function;
+
 /**
- * Created by shane on 8/21/15.
+ * @author shane on 8/21/15.
  */
 public class Util {
     /**
@@ -23,5 +25,9 @@ public class Util {
         }
 
         return true;
+    }
+
+    public static boolean isOperator(String token) {
+        return (Function.ADDITION.equals(token) || Function.SUBTRACTION.equals(token) || Function.DIVISION.equals(token) || Function.MULTIPLICATION.equals(token));
     }
 }
