@@ -1,6 +1,7 @@
-package function;
+package function.components;
 
 import function.adapters.FunctionAdapter;
+import function.operations.OperatorFactory;
 import function.util.Constants;
 import function.util.FunctionParser;
 
@@ -134,7 +135,7 @@ public final class FunctionTree extends Tree {
 
     private double performOperation(double operandA, double operandB, String operation) {
 
-        FunctionFactory factory = new FunctionFactory();
+        OperatorFactory factory = new OperatorFactory();
 
         Function function = Function.newInstance(operandA, operandB);
 

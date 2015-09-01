@@ -1,6 +1,8 @@
 package ui.components.controllers;
 
-import function.*;
+import function.components.FunctionTree;
+import function.components.NullTree;
+import function.components.Tree;
 import function.exceptions.MalformedNumberException;
 import function.util.Constants;
 import function.util.Util;

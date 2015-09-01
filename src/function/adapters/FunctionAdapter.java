@@ -1,9 +1,9 @@
 package function.adapters;
 
-import function.FunctionTree;
-import function.Node;
-import function.NullTree;
-import function.Tree;
+import function.components.FunctionTree;
+import function.components.Node;
+import function.components.NullTree;
+import function.components.Tree;
 import function.exceptions.MalformedNumberException;
 import function.util.Constants;
 import function.util.FunctionParser;

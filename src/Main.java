@@ -2,8 +2,11 @@ import component_pattern_test.DiscJockey;
 import component_pattern_test.Song;
 import component_pattern_test.SongComponent;
 import component_pattern_test.SongGroup;
-import function.*;
 import function.adapters.FunctionAdapter;
+import function.components.FunctionTree;
+import function.components.Node;
+import function.components.NullTree;
+import function.components.Tree;
 import function.util.FunctionParser;
 
 import java.util.*;
