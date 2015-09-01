@@ -15,29 +15,20 @@ import static java.lang.System.out;
 
 public class Main {
 
-    Button button;
-
     public static void main(String[] args) {
 //        testInsertSpaces();
 //        testTree3();
 
-        String expression = "4 + 5 + 1 / 4";
+        String expression = "5 + 2 - 3 / 4";
 
-        String[] tokens = FunctionParser.tokenize(expression);
-
-        System.out.println("Tokenize: " + Arrays.toString(tokens));
-
-        Tree tree = FunctionAdapter.newInstance(tokens).buildTree();
+        Tree tree = FunctionTree.newInstance(expression);
 
         if (tree instanceof NullTree)
             out.println("Unable to create tree");
         else {
-            System.out.print("Pre-order: ");
-            ((FunctionTree) tree).preOrder();
             System.out.print("\nIn-order: ");
-            ((FunctionTree) tree).inOrder();
-            System.out.print("\nPost-order: ");
-            ((FunctionTree) tree).postOrder();
+            System.out.print(((FunctionTree) tree).inOrder());
+//            System.out.print(((FunctionTree) tree).execute());
         }
     }
 

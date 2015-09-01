@@ -3,6 +3,7 @@ package function;
 import function.exceptions.ZeroDivisionException;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import static java.lang.System.out;
@@ -31,6 +32,21 @@ public final class FunctionTree extends Tree {
         return new FunctionTree(root);
     }
 
+    /**
+     * Use this factory
+     *
+     * @return
+     */
+    public static Tree newInstance(String equation) {
+        return FunctionAdapter
+                .newInstance(
+                        FunctionParser.tokenize(
+                                FunctionParser.compressBrackets(equation)
+                        )
+                )
+                .buildTree();
+    }
+
     public Node getRoot() {
         return root;
     }
@@ -38,12 +54,13 @@ public final class FunctionTree extends Tree {
     //========================================================
     //              Traversal
     //========================================================
-    private void inOrder(Node node){
+    private List<String> inOrder(Node node, List<String> values){
         if (null != node) {
-            inOrder(node.getLeft());
-            out.print(node.getData() + " ");
-            inOrder(node.getRight());
+            inOrder(node.getLeft(), values);
+            values.add( node.getData() );
+            inOrder(node.getRight(), values);
         }
+        return values;
     }
 
     private void postOrder(Node node){
@@ -67,9 +84,11 @@ public final class FunctionTree extends Tree {
     }
 
 
-    public void inOrder(){
+    public List<String> inOrder(){
+        List<String> nodeList = new ArrayList<>();
         if (null != root)
-            inOrder(root);
+            return inOrder(root, nodeList);
+        return Collections.emptyList();
     }
 
     public void postOrder() {
