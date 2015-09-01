@@ -66,16 +66,16 @@ public class CalculatorController implements Initializable {
 
         String[] tokens = FunctionParser.tokenize(expression);
 
-        System.out.println(Arrays.toString(tokens));
-
         Tree tree = FunctionAdapter.newInstance(tokens).buildTree();
 
         if (tree instanceof NullTree) {
             System.out.println("Error");
             displayField.setText("ERROR");
         } else {
-            ((FunctionTree) tree).postOrder();
-            displayField.setText(((FunctionTree) tree).execute());
+            String result = ((FunctionTree) tree).execute();
+            ((FunctionTree) tree).inOrder();
+            System.out.print(" = " + result);
+            displayField.setText(result);
         }
     }
 

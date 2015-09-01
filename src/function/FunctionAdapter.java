@@ -1,7 +1,9 @@
 package function;
 
+import function.exceptions.MalformedNumberException;
 import function_test.Function;
 
+import java.nio.charset.MalformedInputException;
 import java.util.*;
 
 /**
@@ -33,7 +35,12 @@ public final class FunctionAdapter {
         if (expressions.size() <= 0)
             return NullTree.getInstance();
 
-        return FunctionTree.newInstance(findOperands(expressions));
+        try {
+            return FunctionTree.newInstance(findOperands(expressions));
+        } catch(MalformedNumberException e) {
+            return NullTree.getInstance();
+        }
+
     }
 
     private Node findOperands(List<String> expressions){
@@ -73,8 +80,13 @@ public final class FunctionAdapter {
 
         // this is only true if they are -1
         // which means no brackets were present
-        if (indexOpen == indexClose)
-            return Node.newInstance(expression);
+        if (indexOpen == indexClose){
+            // too many decimal points
+            if (expression.length() - expression.replace(".", "").length() > 1)
+                throw new MalformedNumberException();
+            else
+                return Node.newInstance(expression);
+        }
 
         // if the brackets do not match up
         if ((indexOpen > indexClose) || (indexOpen != 0 ) || (indexClose != expression.length() - 1))
