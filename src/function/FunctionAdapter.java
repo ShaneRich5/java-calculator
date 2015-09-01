@@ -1,6 +1,7 @@
 package function;
 
 import function.exceptions.MalformedNumberException;
+import function.util.Util;
 import function_test.Function;
 
 import java.nio.charset.MalformedInputException;
@@ -81,8 +82,8 @@ public final class FunctionAdapter {
         // this is only true if they are -1
         // which means no brackets were present
         if (indexOpen == indexClose){
-            // too many decimal points
-            if (expression.length() - expression.replace(".", "").length() > 1)
+            // too many decimal points in number
+            if (Util.isNumeric(expression) && expression.length() - expression.replace(".", "").length() > 1)
                 throw new MalformedNumberException();
             else
                 return Node.newInstance(expression);
