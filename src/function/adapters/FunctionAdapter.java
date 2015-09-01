@@ -1,10 +1,15 @@
-package function;
+package function.adapters;
 
+import function.FunctionTree;
+import function.Node;
+import function.NullTree;
+import function.Tree;
 import function.exceptions.MalformedNumberException;
+import function.util.Constants;
+import function.util.FunctionParser;
 import function.util.Util;
 import function_test.Function;
 
-import java.nio.charset.MalformedInputException;
 import java.util.*;
 
 /**

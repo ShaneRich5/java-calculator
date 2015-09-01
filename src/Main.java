@@ -3,11 +3,8 @@ import component_pattern_test.Song;
 import component_pattern_test.SongComponent;
 import component_pattern_test.SongGroup;
 import function.*;
-import javafx.application.Application;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.layout.StackPane;
-import javafx.stage.Stage;
+import function.adapters.FunctionAdapter;
+import function.util.FunctionParser;
 
 import java.util.*;
 
@@ -27,8 +24,8 @@ public class Main {
             out.println("Unable to create tree");
         else {
             System.out.print("\nIn-order: ");
-            System.out.print(((FunctionTree) tree).inOrder());
-//            System.out.print(((FunctionTree) tree).execute());
+            System.out.println(((FunctionTree) tree).inOrder());
+            System.out.print(((FunctionTree) tree).execute());
         }
     }
 

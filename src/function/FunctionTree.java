@@ -1,6 +1,8 @@
 package function;
 
-import function.exceptions.ZeroDivisionException;
+import function.adapters.FunctionAdapter;
+import function.util.Constants;
+import function.util.FunctionParser;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -121,7 +123,7 @@ public final class FunctionTree extends Tree {
     }
 
     private Node calcNode(Node leftNode, Node rightNode, String operation){
-        System.out.println(leftNode.getData() + operation + rightNode.getData());
+//        System.out.println(leftNode.getData() + operation + rightNode.getData());
 
         return Node.newInstance(String.valueOf(performOperation(
                 Double.parseDouble(!(leftNode.isLeaf()) ? (calcNode(leftNode.getLeft(), leftNode.getRight(), leftNode.getData())).getData() : leftNode.getData()),
@@ -131,19 +133,13 @@ public final class FunctionTree extends Tree {
     }
 
     private double performOperation(double operandA, double operandB, String operation) {
-        switch (operation){
-            case "+":
-                return operandA + operandB;
-            case "-":
-                return operandA - operandB;
-            case "/":
-                if (0 == operandB)
-                    throw new ZeroDivisionException();
-                return operandA / operandB;
-            case "*":
-                return operandA * operandB;
-            default:
-                throw new UnsupportedOperationException();
-        }
+
+        FunctionFactory factory = new FunctionFactory();
+
+        Function function = Function.newInstance(operandA, operandB);
+
+        function.setOperation(factory.getOperator(operation));
+
+        return function.execute(operandA, operandB);
     }
 }
