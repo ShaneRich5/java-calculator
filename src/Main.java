@@ -19,7 +19,26 @@ public class Main {
 
     public static void main(String[] args) {
 //        testInsertSpaces();
-        testTree3();
+//        testTree3();
+
+        String expression = "4 + 5 + 1 / 4";
+
+        String[] tokens = FunctionParser.tokenize(expression);
+
+        System.out.println("Tokenize: " + Arrays.toString(tokens));
+
+        Tree tree = FunctionAdapter.newInstance(tokens).buildTree();
+
+        if (tree instanceof NullTree)
+            out.println("Unable to create tree");
+        else {
+            System.out.print("Pre-order: ");
+            ((FunctionTree) tree).preOrder();
+            System.out.print("\nIn-order: ");
+            ((FunctionTree) tree).inOrder();
+            System.out.print("\nPost-order: ");
+            ((FunctionTree) tree).postOrder();
+        }
     }
 
     public static void testInsertSpaces() {

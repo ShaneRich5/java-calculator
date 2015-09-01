@@ -40,9 +40,9 @@ public final class FunctionTree extends Tree {
     //========================================================
     private void inOrder(Node node){
         if (null != node) {
-            postOrder(node.getLeft());
-            out.println(node.getData());
-            postOrder(node.getRight());
+            inOrder(node.getLeft());
+            out.print(node.getData() + " ");
+            inOrder(node.getRight());
         }
     }
 
@@ -50,13 +50,13 @@ public final class FunctionTree extends Tree {
         if (null != node) {
             postOrder(node.getLeft());
             postOrder(node.getRight());
-            out.println(node.getData());
+            out.print(node.getData() + " ");
         }
     }
 
     private void preOrder(Node node){
         if (null != node) {
-            out.println(node.getData());
+            out.print(node.getData() + " ");
             preOrder(node.getLeft());
             preOrder(node.getRight());
         }
@@ -81,6 +81,12 @@ public final class FunctionTree extends Tree {
     public void preOrder(){
         if (null != root)
             preOrder(root);
+    }
+
+    private void equationFormat(Node node) {
+        if (null != node) {
+            equationFormat(node.getLeft());
+        }
     }
 
     public String execute(){
