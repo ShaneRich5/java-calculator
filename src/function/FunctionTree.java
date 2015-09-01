@@ -37,7 +37,7 @@ public final class FunctionTree extends Tree {
      *
      * @return
      */
-    public static Tree newInstance(String equation) {
+    public static Tree buildTree(String equation) {
         return FunctionAdapter
                 .newInstance(
                         FunctionParser.tokenize(

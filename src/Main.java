@@ -21,7 +21,7 @@ public class Main {
 
         String expression = "5 + 2 - 3 / 4";
 
-        Tree tree = FunctionTree.newInstance(expression);
+        Tree tree = FunctionTree.buildTree(expression);
 
         if (tree instanceof NullTree)
             out.println("Unable to create tree");

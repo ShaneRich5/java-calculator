@@ -65,11 +65,8 @@ public class CalculatorController implements Initializable {
     }
 
     @FXML public void handleEqualAction(ActionEvent actionEvent) {
-        String expression = displayField.getText();
 
-        String[] tokens = FunctionParser.tokenize(expression);
-
-        Tree tree = FunctionAdapter.newInstance(tokens).buildTree();
+        Tree tree = FunctionTree.buildTree(displayField.getText());
 
         String result = Constants.ERROR_STRING;
 
@@ -78,12 +75,12 @@ public class CalculatorController implements Initializable {
         if (tree instanceof NullTree) {
             System.out.println(result);
             displayField.setText(result);
-            errorStatus = false;
         } else {
             try {
                 result = ((FunctionTree) tree).execute();
                 ((FunctionTree) tree).inOrder();
                 System.out.print(" = " + result);
+                errorStatus = false;
             } catch(MalformedNumberException e) {
                 System.out.println("Malformed Exception");
             } catch(NullPointerException e) {
