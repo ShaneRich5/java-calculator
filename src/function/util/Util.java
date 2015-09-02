@@ -7,7 +7,7 @@ public class Util {
     /**
      * Explicitly prevents instantiation and inheritance
      */
-    public Util(){
+    private Util(){
         throw new AssertionError();
     }
 
