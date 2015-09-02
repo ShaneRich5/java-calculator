@@ -2,11 +2,19 @@
     -fx-background-color: #D1D1D1;
 }
 
+.operator-btn:selected {
+    -fx-background-color: #BBB;
+}
+
 .equal-btn {
     -fx-background-color: #4084F2;
     -fx-text-fill: #FFF;
 }
 
 .operand-btn {
-    -fx-background-color: #FFFFFF;
+    -fx-background-color: #FFF;
+}
+
+.operand-btn:selected {
+    -fx-background-color: #DDD;
 }
