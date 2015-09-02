@@ -2,21 +2,12 @@ package ui.components;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Insets;
-import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
-import javafx.scene.layout.FlowPane;
-import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
-import java.util.Arrays;
-import java.util.List;
-
 /**
- * Created by shane on 8/25/15.
+ * @author shane on 8/25/15.
  */
 public class Calculator extends Application {
 

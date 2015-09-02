@@ -1,7 +1,5 @@
 package function.util;
 
-import function_test.Function;
-
 /**
  * @author shane on 8/21/15.
  */
@@ -28,6 +26,6 @@ public class Util {
     }
 
     public static boolean isOperator(String token) {
-        return (Function.ADDITION.equals(token) || Function.SUBTRACTION.equals(token) || Function.DIVISION.equals(token) || Function.MULTIPLICATION.equals(token));
+        return (Constants.ADDITION.equals(token) || Constants.SUBTRACTION.equals(token) || Constants.DIVISION.equals(token) || Constants.MULTIPLICATION.equals(token));
     }
 }

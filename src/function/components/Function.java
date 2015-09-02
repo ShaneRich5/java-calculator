@@ -17,7 +17,7 @@ public final class Function {
         this.num2 = num2;
     }
 
-    public double execute(double num1, double num2) {
+    public double execute() {
 
         return operation.equate(num1, num2);
 

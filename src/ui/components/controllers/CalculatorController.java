@@ -87,6 +87,8 @@ public class CalculatorController implements Initializable {
                 System.out.println("Malformed Exception");
             } catch(NullPointerException e) {
                 System.out.println("NullPointer Exception");
+            } catch (UnsupportedOperationException e) {
+                e.printStackTrace();
             }
             displayField.setText(result);
         }

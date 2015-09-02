@@ -1,10 +1,6 @@
 package function.operations;
 
 import function.interfaces.Operable;
-import function.operations.Add;
-import function.operations.Divide;
-import function.operations.Multiply;
-import function.operations.Subtract;
 import function.util.Constants;
 
 /**
@@ -14,25 +10,27 @@ public class OperatorFactory {
 
     public Operable getOperator(String newOperator) {
 
-        Operable operator;
-
         switch (newOperator) {
             case Constants.ADDITION:
-                operator = new Add();
-                break;
+
+                return new Add();
+
             case Constants.SUBTRACTION:
-                operator = new Subtract();
-                break;
+
+                return new Subtract();
+
             case Constants.MULTIPLICATION:
-                operator = new Multiply();
-                break;
+
+                return  new Multiply();
+
             case Constants.DIVISION:
-                operator = new Divide();
-                break;
+
+                return new Divide();
+
             default:
+
                 throw new UnsupportedOperationException();
         }
 
-        return operator;
     }
 }

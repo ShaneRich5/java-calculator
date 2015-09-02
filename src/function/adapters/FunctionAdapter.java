@@ -1,14 +1,10 @@
 package function.adapters;
 
-import function.components.FunctionTree;
-import function.components.Node;
-import function.components.NullTree;
-import function.components.Tree;
+import function.components.*;
 import function.exceptions.MalformedNumberException;
 import function.util.Constants;
 import function.util.FunctionParser;
 import function.util.Util;
-import function_test.Function;
 
 import java.util.*;
 
@@ -128,10 +124,10 @@ public final class FunctionAdapter {
      * @return
      */
     private int lastIndexOfOperator(List<String> expressions) {
-        int indexOfMinusSign = lastIndex(expressions, Function.SUBTRACTION);
-        int indexOfAddSign = lastIndex(expressions, Function.ADDITION);
-        int indexOfDivisionSign = lastIndex(expressions, Function.DIVISION);
-        int indexOfMultiplicationSign = lastIndex(expressions, Function.MULTIPLICATION);
+        int indexOfMinusSign = lastIndex(expressions, Constants.SUBTRACTION);
+        int indexOfAddSign = lastIndex(expressions, Constants.ADDITION);
+        int indexOfDivisionSign = lastIndex(expressions, Constants.DIVISION);
+        int indexOfMultiplicationSign = lastIndex(expressions, Constants.MULTIPLICATION);
 
         if (indexOfMinusSign > -1)
             return indexOfMinusSign;

@@ -13,10 +13,10 @@ public final class Constants {
     public static final String EMPTY_STRING = "";
     public static final String ERROR_STRING = "ERROR";
 
-    public static final String ADDITION = "[+]";
-    public static final String SUBTRACTION = "[-]";
-    public static final String DIVISION = "[/]";
-    public static final String MULTIPLICATION = "[*]";
+    public static final String ADDITION = "+";
+    public static final String SUBTRACTION = "-";
+    public static final String DIVISION = "/";
+    public static final String MULTIPLICATION = "*";
 
     public static final String EQUALS = "==";
     public static final String GREATER = ">";

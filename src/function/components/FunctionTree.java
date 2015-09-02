@@ -141,6 +141,6 @@ public final class FunctionTree extends Tree {
 
         function.setOperation(factory.getOperator(operation));
 
-        return function.execute(operandA, operandB);
+        return function.execute();
     }
 }
