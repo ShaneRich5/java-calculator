@@ -11,7 +11,17 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * Created by shane on 8/21/15.
+ * <h1>FunctionTree</h1>
+ *
+ * <p>
+ *     A specialized binary tree with each node representing an equation.
+ *     Each node represents either an operand or operator. The tree has no
+ *     other constraints in its construction
+ * </p>
+ *
+ * @author  Shane Richards
+ * @version 1.0
+ * @since   2015-21-8
  */
 public final class FunctionTree extends Tree {
 
@@ -130,18 +140,45 @@ public final class FunctionTree extends Tree {
     }
 
     /**
+     * <h1>FunctionParser</h1>
      *
+     * A static helper class that manipulates the state of the equation
+     * string provided while the FunctionTree is being created.
      *
-     * @author shane on 8/21/15.
+     * @author Shane Richards
+     * @version 1.0
+     * @since 2015-08-21
      */
     public static final class FunctionParser {
 
+        /**
+         * This constructor exists to prevent the creation of a default.
+         * Instantiation is barred externally by being made private and
+         * internally by throwing an AssertionError exception
+         */
         private FunctionParser() { throw new AssertionError(); }
 
+        /**
+         * This method delimits strings by matching the regex for spaces,
+         * which is '\\s+'. These tokens are added to an array of strings
+         *
+         * @param equation  a string representing a complex mathematically
+         *                  equations
+         * @return          an array of strings representing the delimited
+         *                  equation
+         */
         public static String[] tokenize(String equation){
             return equation.split("\\s+");
         }
 
+        /**
+         * This method is inserts spaces into a string equation
+         *
+         * @param equation  an equation in the form of a string,
+         *                  containing no spaces
+         * @return          a string, in which, each operand and
+         *                  operator is separated by a space
+         */
         public static String insertSpaces(String equation){
             return equation.replaceAll(".(?=.)", "$0 ");
         }
@@ -149,8 +186,9 @@ public final class FunctionTree extends Tree {
         /**
          * Compress the outer most brackets
          *
-         * @param expression a typical mathematical equation
-         * @return          the same equation, with the inner brackets containing no spaces
+         * @param expression    a typical mathematical equation
+         * @return              the same equation, with the inner brackets
+         *                      containing no spaces
          */
         public static String compressBrackets(String expression) {
 
@@ -175,9 +213,17 @@ public final class FunctionTree extends Tree {
     }
 
     /**
-     * Created by shane on 8/21/15.
+     * <h1>FunctionAdapter</h1>
+     *
+     * <p>Converts strings of equations into binary
+     * tress and vice versa.</p>
+     *
+     * @author  Shane Richards
+     * @version 1.0
+     * @since   2015-08-21
      */
     public static final class FunctionAdapter {
+
         private final List<String> expressions;
 
         private FunctionAdapter(List<String> expressions) {
@@ -198,11 +244,8 @@ public final class FunctionTree extends Tree {
          * @return
          */
         public Tree buildTree() {
-            // invalid list
-            // should probably use a factory here
             if (expressions.size() <= 0)
                 return NullTree.getInstance();
-
             try {
                 return FunctionTree.newInstance(findOperands(expressions));
             } catch(MalformedNumberException e) {
@@ -286,14 +329,16 @@ public final class FunctionTree extends Tree {
         /**
          * Finds the right most operator in the order of precedence
          *
-         * @param expressions
+         * @param expressions   list of tokens
          * @return
          */
         private int lastIndexOfOperator(List<String> expressions) {
-            int values[] = {lastIndex(expressions, Constants.SUBTRACTION),
-                        lastIndex(expressions, Constants.ADDITION),
-                        lastIndex(expressions, Constants.DIVISION),
-                        lastIndex(expressions, Constants.MULTIPLICATION)};
+            int values[] = {
+                    lastIndex(expressions, Constants.SUBTRACTION),
+                    lastIndex(expressions, Constants.ADDITION),
+                    lastIndex(expressions, Constants.DIVISION),
+                    lastIndex(expressions, Constants.MULTIPLICATION)
+            };
 
             int max = -1;
 
@@ -303,7 +348,8 @@ public final class FunctionTree extends Tree {
         }
 
         /**
-         * Finds the right most match
+         * Scanning from right to left, the index of the operator the
+         * least precedence is determined
          *
          * @param elements
          * @param expression
