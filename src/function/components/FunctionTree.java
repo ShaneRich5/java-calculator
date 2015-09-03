@@ -1,31 +1,26 @@
 package function.components;
 
-import function.adapters.FunctionAdapter;
+import function.exceptions.MalformedNumberException;
 import function.factories.OperatorFactory;
 import function.util.Constants;
-import function.util.FunctionParser;
+import function.util.Util;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-
-import static java.lang.System.out;
 
 /**
  * Created by shane on 8/21/15.
  */
 public final class FunctionTree extends Tree {
-    List<String> validOperations = new ArrayList<>();
 
     private Node root;
 
     private FunctionTree(Node root) {
-        validOperations.add(Constants.ADDITION);
-        validOperations.add(Constants.SUBTRACTION);
-        validOperations.add(Constants.MULTIPLICATION);
-        validOperations.add(Constants.DIVISION);
 
         this.root = root;
+
     }
 
     //========================================================
@@ -42,11 +37,7 @@ public final class FunctionTree extends Tree {
      */
     public static Tree buildTree(String equation) {
         return FunctionAdapter
-                .newInstance(
-                        FunctionParser.tokenize(
-                                FunctionParser.compressBrackets(equation)
-                        )
-                )
+                .newInstance(FunctionParser.tokenize(FunctionParser.compressBrackets(equation)))
                 .buildTree();
     }
 
@@ -60,7 +51,7 @@ public final class FunctionTree extends Tree {
     private List<String> inOrder(Node node, List<String> values){
         if (null != node) {
             inOrder(node.getLeft(), values);
-            values.add( node.getData() );
+            values.add(node.getData());
             inOrder(node.getRight(), values);
         }
         return values;
@@ -84,11 +75,6 @@ public final class FunctionTree extends Tree {
         return values;
     }
 
-    public boolean isEmpty(){
-        return null == root;
-    }
-
-
     public List<String> inOrder(){
         List<String> nodeList = new ArrayList<>();
         if (null != root)
@@ -108,12 +94,6 @@ public final class FunctionTree extends Tree {
         if (null != root)
             return preOrder(root, values);
         return Collections.emptyList();
-    }
-
-    private void equationFormat(Node node) {
-        if (null != node) {
-            equationFormat(node.getLeft());
-        }
     }
 
     public String execute(){
@@ -147,5 +127,194 @@ public final class FunctionTree extends Tree {
         function.setOperation(factory.getOperator(operation));
 
         return function.execute();
+    }
+
+    /**
+     *
+     *
+     * @author shane on 8/21/15.
+     */
+    public static final class FunctionParser {
+
+        private FunctionParser() { throw new AssertionError(); }
+
+        public static String[] tokenize(String equation){
+            return equation.split("\\s+");
+        }
+
+        public static String insertSpaces(String equation){
+            return equation.replaceAll(".(?=.)", "$0 ");
+        }
+
+        /**
+         * Compress the outer most brackets
+         *
+         * @param expression a typical mathematical equation
+         * @return          the same equation, with the inner brackets containing no spaces
+         */
+        public static String compressBrackets(String expression) {
+
+            int openBracketIndex = expression.indexOf(Constants.BRACKET_OPEN);
+            int closeBracketIndex = expression.indexOf(Constants.BRACKET_CLOSED);
+
+            // no brackets found
+            if (openBracketIndex == closeBracketIndex)
+                return expression;
+
+            // strips outermost brackets if the initial expression was enclosed by brackets
+            if ((openBracketIndex == 0) && (closeBracketIndex == expression.length() - 1))
+                compressBrackets(expression.substring(1, expression.length() - 2));
+
+            if (openBracketIndex >= closeBracketIndex)
+                throw new UnsupportedOperationException();
+
+            return expression.substring(0, openBracketIndex)
+                    + expression.substring(openBracketIndex, closeBracketIndex + 1).replaceAll("\\s+", "")
+                    + compressBrackets(expression.substring(closeBracketIndex + 1, expression.length()));
+        }
+    }
+
+    /**
+     * Created by shane on 8/21/15.
+     */
+    public static final class FunctionAdapter {
+        private final List<String> expressions;
+
+        private FunctionAdapter(List<String> expressions) {
+
+            this.expressions = expressions;
+
+        }
+
+        public static FunctionAdapter newInstance(String[] expressions) {
+
+            return new FunctionAdapter(new ArrayList<>(Arrays.asList(expressions)));
+
+        }
+
+        /**
+         * Consider fly weight approach for constructing trees
+         *
+         * @return
+         */
+        public Tree buildTree() {
+            // invalid list
+            // should probably use a factory here
+            if (expressions.size() <= 0)
+                return NullTree.getInstance();
+
+            try {
+                return FunctionTree.newInstance(findOperands(expressions));
+            } catch(MalformedNumberException e) {
+                return NullTree.getInstance();
+            }
+
+        }
+
+        private Node findOperands(List<String> expressions){
+
+            Node node = null;
+
+            // needs testing, not sure how correct this is
+            if (1 == expressions.size())
+                return expandBrackets(expressions.remove(0));
+
+            // indexes of the various operations
+            int index = lastIndexOfOperator(expressions);
+
+            if (-1 != index){
+                node = Node.newInstance(expressions.remove(index));
+                node.setRight(findOperands(expressions.subList(index, expressions.size())));
+                node.setLeft(findOperands(expressions.subList(0, index)));
+            }
+            return node;
+        }
+
+        /**
+         * Bracketed functions should be added without spaces,
+         * for example (a - b) * c should be (a-b) * c so the above
+         * method prioritizes the bracketed part
+         *
+         * Two methods in the FunctionParser should be created to serve this purpose,
+         * one to compress the brackets for the inputs and another to expand the brackets
+         * and remove them from the equation.
+         *
+         * @param   expression
+         */
+        private Node expandBrackets(String expression){
+
+            int indexOpen = expression.indexOf(Constants.BRACKET_OPEN);
+            int indexClose = expression.lastIndexOf(Constants.BRACKET_CLOSED);
+
+            // this is only true if they are -1
+            // which means no brackets were present
+            if (indexOpen == indexClose){
+                // too many decimal points in number
+                if (Util.isNumeric(expression) && expression.length() - expression.replace(".", "").length() > 1)
+                    throw new MalformedNumberException();
+                else
+                    return Node.newInstance(expression);
+            }
+
+            // if the brackets do not match up
+            if ((indexOpen > indexClose) || (indexOpen != 0 ) || (indexClose != expression.length() - 1))
+                throw new UnsupportedOperationException();
+
+            expression = expression.substring(1, expression.length() - 1);
+
+            // check if contains inner brackets
+            indexOpen = expression.indexOf(Constants.BRACKET_OPEN);
+            indexClose = expression.lastIndexOf(Constants.BRACKET_CLOSED);
+
+            System.out.println("In adapter: " + FunctionParser.insertSpaces(expression));
+
+            if (indexOpen > indexClose)
+                throw new UnsupportedOperationException();
+
+            if (indexOpen != indexClose) {
+                String temp = expression.substring(indexOpen, indexClose + 1);
+                String beforeSplit = FunctionParser.insertSpaces(expression.substring(0, indexOpen));
+                String afterSplit = FunctionParser.insertSpaces(expression.substring(indexClose + 1, expression.length()));
+
+                expression = beforeSplit + " " + temp + " " + afterSplit;
+            } else {
+                expression = FunctionParser.insertSpaces(expression);
+            }
+            return findOperands(new ArrayList<>(Arrays.asList(FunctionParser.tokenize(expression))));
+        }
+
+        /**
+         * Finds the right most operator in the order of precedence
+         *
+         * @param expressions
+         * @return
+         */
+        private int lastIndexOfOperator(List<String> expressions) {
+            int values[] = {lastIndex(expressions, Constants.SUBTRACTION),
+                        lastIndex(expressions, Constants.ADDITION),
+                        lastIndex(expressions, Constants.DIVISION),
+                        lastIndex(expressions, Constants.MULTIPLICATION)};
+
+            int max = -1;
+
+            for (int value : values) max = (max < value) ? value : max;
+
+            return max;
+        }
+
+        /**
+         * Finds the right most match
+         *
+         * @param elements
+         * @param expression
+         * @return
+         */
+        private int lastIndex(List<String> elements, String expression){
+            for (int i = (elements.size() - 1); i >= 0; i--) {
+                if (elements.get(i).equals(expression))
+                    return i;
+            }
+            return -1;
+        }
     }
 }
