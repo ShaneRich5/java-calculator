@@ -104,10 +104,12 @@ public class CalculatorController implements Initializable {
 
         switch (bracket){
             case "(":
-
+                incompleteBracktCount++;
                 break;
             case ")":
-
+                if (incompleteBracktCount <= 0)
+                    return;
+                incompleteBracktCount--;
                 break;
         }
         displayField.setText(displayField.getText() + bracket);

@@ -1,6 +1,10 @@
-package function.operations;
+package function.factories;
 
 import function.interfaces.Operable;
+import function.operations.Add;
+import function.operations.Divide;
+import function.operations.Multiply;
+import function.operations.Subtract;
 import function.util.Constants;
 
 /**

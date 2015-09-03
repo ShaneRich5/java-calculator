@@ -1,11 +1,6 @@
-import function.adapters.FunctionAdapter;
 import function.components.FunctionTree;
-import function.components.Node;
 import function.components.NullTree;
 import function.components.Tree;
-import function.util.FunctionParser;
-
-import java.util.*;
 
 import static java.lang.System.out;
 

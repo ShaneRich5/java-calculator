@@ -1,7 +1,7 @@
 package function.components;
 
 import function.adapters.FunctionAdapter;
-import function.operations.OperatorFactory;
+import function.factories.OperatorFactory;
 import function.util.Constants;
 import function.util.FunctionParser;
 
@@ -66,20 +66,22 @@ public final class FunctionTree extends Tree {
         return values;
     }
 
-    private void postOrder(Node node){
+    private List<String> postOrder(Node node, List<String> values){
         if (null != node) {
-            postOrder(node.getLeft());
-            postOrder(node.getRight());
-            out.print(node.getData() + " ");
+            postOrder(node.getLeft(), values);
+            postOrder(node.getRight(), values);
+            values.add(node.getData());
         }
+        return values;
     }
 
-    private void preOrder(Node node){
+    private List<String> preOrder(Node node, List<String> values){
         if (null != node) {
-            out.print(node.getData() + " ");
-            preOrder(node.getLeft());
-            preOrder(node.getRight());
+            values.add(node.getData());
+            preOrder(node.getLeft(), values);
+            preOrder(node.getRight(), values);
         }
+        return values;
     }
 
     public boolean isEmpty(){
@@ -94,15 +96,18 @@ public final class FunctionTree extends Tree {
         return Collections.emptyList();
     }
 
-    public void postOrder() {
+    public List<String> postOrder() {
+        List<String> values = new ArrayList<>();
         if (null != root)
-            postOrder(root);
-        System.out.println("Empty tree");
+            return postOrder(root, values);
+        return Collections.emptyList();
     }
 
-    public void preOrder(){
+    public List<String> preOrder(){
+        List<String> values = new ArrayList<>();
         if (null != root)
-            preOrder(root);
+            return preOrder(root, values);
+        return Collections.emptyList();
     }
 
     private void equationFormat(Node node) {
