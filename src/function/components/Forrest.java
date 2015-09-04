@@ -1,7 +1,7 @@
 package function.components;
 
 /**
- * Created by shane on 8/24/15.
+ * @author Shane on 8/24/15.
  */
 public class Forrest extends Tree{
 

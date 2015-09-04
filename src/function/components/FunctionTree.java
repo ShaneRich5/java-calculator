@@ -25,25 +25,41 @@ import java.util.List;
  */
 public final class FunctionTree extends Tree {
 
+    /**
+     * Maintains a pointer to the root tre node
+     */
     private Node root;
 
+    /**
+     * Private constructor that is used internal within the class.
+     * This grantees immutability and from external instantiation.
+     *
+     * @param root  the root node of the tree
+     */
     private FunctionTree(Node root) {
 
         this.root = root;
 
     }
 
-    //========================================================
-    //              Factories
-    //========================================================
+    /**
+     * Factory method that return a new instance of a function tree.
+     *
+     * @param root  first node of the tree
+     * @return      new instance of the FunctionTree
+     */
     public static FunctionTree newInstance(Node root) {
         return new FunctionTree(root);
     }
 
     /**
-     * Use this factory
+     * Factory method that creates an instance of a Tree based on the
+     * equation provided. If the equation is malformed or contains any
+     * errors, a NullTree is returned. Otherwise, a FunctionTree is
+     * created using the FunctionAdapter helper class.
      *
-     * @return
+     * @param equation  a equation in the form of a string
+     * @return          a tree
      */
     public static Tree buildTree(String equation) {
         return FunctionAdapter
@@ -51,13 +67,23 @@ public final class FunctionTree extends Tree {
                 .buildTree();
     }
 
+    /**
+     * Accessor method of the root state.
+     *
+     * @return      the node at the root of the tree
+     */
     public Node getRoot() {
         return root;
     }
 
-    //========================================================
-    //              Traversal
-    //========================================================
+    /**
+     * Used internally to walk the tree recursively using an in-order traversal technique.
+     *
+     * @param node      node presently being accessed
+     * @param values    current list of values appended from prior nodes
+     * @return          list of node values collected from previously traversed
+     *                  nodes
+     */
     private List<String> inOrder(Node node, List<String> values){
         if (null != node) {
             inOrder(node.getLeft(), values);
@@ -67,6 +93,14 @@ public final class FunctionTree extends Tree {
         return values;
     }
 
+    /**
+     * Used internally to walk the tree recursively using an post-order traversal technique.
+     *
+     * @param node      node presently being accessed
+     * @param values    current list of values appended from prior nodes
+     * @return          list of node values collected from previously traversed
+     *                  nodes
+     */
     private List<String> postOrder(Node node, List<String> values){
         if (null != node) {
             postOrder(node.getLeft(), values);
@@ -76,6 +110,14 @@ public final class FunctionTree extends Tree {
         return values;
     }
 
+    /**
+     * Used internally to walk the tree recursively using an pre-order traversal technique.
+     *
+     * @param node      node presently being accessed
+     * @param values    current list of values appended from prior nodes
+     * @return          list of node values collected from previously traversed
+     *                  nodes
+     */
     private List<String> preOrder(Node node, List<String> values){
         if (null != node) {
             values.add(node.getData());
@@ -85,6 +127,12 @@ public final class FunctionTree extends Tree {
         return values;
     }
 
+    /**
+     * List the element node of the Tree using an in-order traversal
+     *
+     * @return      a list of strings representing the node in the tree if the root is not null,
+     *              otherwise, an empty list is given
+     */
     public List<String> inOrder(){
         List<String> nodeList = new ArrayList<>();
         if (null != root)
@@ -92,6 +140,12 @@ public final class FunctionTree extends Tree {
         return Collections.emptyList();
     }
 
+    /**
+     * List the element node of the Tree using an post-order traversal
+     *
+     * @return      a list of strings representing the node in the tree if the root is not null,
+     *              otherwise, an empty list is given
+     */
     public List<String> postOrder() {
         List<String> values = new ArrayList<>();
         if (null != root)
@@ -99,6 +153,12 @@ public final class FunctionTree extends Tree {
         return Collections.emptyList();
     }
 
+    /**
+     * List the element node of the Tree using an pre-order traversal
+     *
+     * @return      a list of strings representing the node in the tree if the root is not null,
+     *              otherwise, an empty list is given
+     */
     public List<String> preOrder(){
         List<String> values = new ArrayList<>();
         if (null != root)
@@ -106,28 +166,53 @@ public final class FunctionTree extends Tree {
         return Collections.emptyList();
     }
 
+    /**
+     * Executes the equations based on the operands and operators stored in the nodes of the tree.
+     * If any error occurs, error is displayed
+     *
+     * @return      the result of the equation
+     */
     public String execute(){
 
-        FunctionTree tree = FunctionTree.newInstance(this.root); // use a new instance
+        // a new instance of the tree is used, so that the state of the original tree is unchanged
+        FunctionTree tree = FunctionTree.newInstance(this.root);
 
         Node root = tree.getRoot();
 
         if (!root.isLeaf())
-            root = calcNode(root.getLeft(), root.getRight(), root.getData());
+            root = calculateTree(root.getLeft(), root.getRight(), root.getData());
 
         return root.getData();
     }
 
-    private Node calcNode(Node leftNode, Node rightNode, String operation){
-//        System.out.println(leftNode.getData() + operation + rightNode.getData());
+    /**
+     * Calculates the current equation by using three nodes. The non-leaf parent node is used as
+     * the operator and the child nodes are treated as the operands. If the child nodes are not leaves,
+     * then sub operations are executed using that node and it subsequent children recursively, storing
+     * the result in the parent node.
+     *
+     * @param leftNode  left child current node
+     * @param rightNode right child of current node
+     * @param operation string operator stored in the current node
+     * @return          new node that replaces the parent node with the resulting data
+     */
+    private Node calculateTree(Node leftNode, Node rightNode, String operation){
 
         return Node.newInstance(String.valueOf(performOperation(
-                Double.parseDouble(!(leftNode.isLeaf()) ? (calcNode(leftNode.getLeft(), leftNode.getRight(), leftNode.getData())).getData() : leftNode.getData()),
-                Double.parseDouble(!(rightNode.isLeaf()) ? (calcNode(rightNode.getLeft(), rightNode.getRight(), rightNode.getData())).getData() : rightNode.getData()),
+                Double.parseDouble(!(leftNode.isLeaf()) ? (calculateTree(leftNode.getLeft(), leftNode.getRight(), leftNode.getData())).getData() : leftNode.getData()),
+                Double.parseDouble(!(rightNode.isLeaf()) ? (calculateTree(rightNode.getLeft(), rightNode.getRight(), rightNode.getData())).getData() : rightNode.getData()),
                 operation
         )));
     }
 
+    /**
+     * Executes operations by creating a function with the correct behaviour by using a factory.
+     *
+     * @param operandA  first operand
+     * @param operandB  second operand
+     * @param operation operator to execute
+     * @return          resulting value of equation
+     */
     private double performOperation(double operandA, double operandB, String operation) {
 
         OperatorFactory factory = new OperatorFactory();
@@ -224,14 +309,28 @@ public final class FunctionTree extends Tree {
      */
     public static final class FunctionAdapter {
 
+        /**
+         * Maintains the state of the tokens
+         */
         private final List<String> expressions;
 
+        /**
+         * Private constructor used to prevent external instantiation.
+         *
+         * @param expressions list of string tokens
+         */
         private FunctionAdapter(List<String> expressions) {
 
             this.expressions = expressions;
 
         }
 
+        /**
+         * Factory method for creating a new instance of the FunctionAdapter
+         *
+         * @param expressions   array of tokenized string
+         * @return              instance of the FunctionAdapter
+         */
         public static FunctionAdapter newInstance(String[] expressions) {
 
             return new FunctionAdapter(new ArrayList<>(Arrays.asList(expressions)));
@@ -241,7 +340,8 @@ public final class FunctionTree extends Tree {
         /**
          * Consider fly weight approach for constructing trees
          *
-         * @return
+         * @return      instance of the subclass of Tree being a FunctionTree if the equation contains
+         *              no errors
          */
         public Tree buildTree() {
             if (expressions.size() <= 0)
@@ -254,6 +354,11 @@ public final class FunctionTree extends Tree {
 
         }
 
+        /**
+         *
+         * @param expressions   list of string tokens representing the equation
+         * @return              node
+         */
         private Node findOperands(List<String> expressions){
 
             Node node = null;
