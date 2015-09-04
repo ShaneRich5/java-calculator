@@ -1,7 +1,6 @@
 package ui.components.controllers;
 
 import function.components.FunctionTree;
-import function.components.NullTree;
 import function.components.Tree;
 import function.exceptions.MalformedNumberException;
 import function.util.Constants;
@@ -74,7 +73,7 @@ public class CalculatorController implements Initializable {
 
         errorStatus = true;
 
-        if (tree instanceof NullTree) {
+        if (tree instanceof Tree.NullTree) {
             System.out.println(result);
             displayField.setText(result);
         } else {

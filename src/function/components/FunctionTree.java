@@ -435,7 +435,7 @@ public final class FunctionTree extends Tree {
          * Finds the right most operator in the order of precedence
          *
          * @param expressions   list of tokens
-         * @return
+         * @return              index of desired operator
          */
         private int lastIndexOfOperator(List<String> expressions) {
             int values[] = {
@@ -456,8 +456,8 @@ public final class FunctionTree extends Tree {
          * Scanning from right to left, the index of the operator the
          * least precedence is determined
          *
-         * @param elements
-         * @param expression
+         * @param elements      list of strings
+         * @param expression    expression to match
          * @return
          */
         private int lastIndex(List<String> elements, String expression){

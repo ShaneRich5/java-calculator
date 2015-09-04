@@ -1,9 +1,10 @@
 package function.util;
 
 /**
- * System Constants
+ * Constants used throughout the application
  *
- * @author shane on 8/24/15.
+ * @author  Shane Richards
+ * @since   2015-24-8
  */
 public final class Constants {
     private Constants(){

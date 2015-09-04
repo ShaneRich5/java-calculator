@@ -3,7 +3,7 @@ package function.components;
 import function.util.Util;
 
 /**
- * Typical Tree node.
+ * This class represents a <code>Node</code>
  *
  * @author shane
  */

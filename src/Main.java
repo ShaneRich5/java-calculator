@@ -1,5 +1,4 @@
 import function.components.FunctionTree;
-import function.components.NullTree;
 import function.components.Tree;
 
 import static java.lang.System.out;
@@ -12,7 +11,7 @@ public class Main {
 
         Tree tree = FunctionTree.buildTree(expression);
 
-        if (tree instanceof NullTree)
+        if (tree instanceof Tree.NullTree)
             out.println("Unable to create tree");
         else {
             System.out.print("\nIn-order: ");
