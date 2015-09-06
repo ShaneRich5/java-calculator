@@ -3,7 +3,11 @@ package function.operations;
 import function.interfaces.Operable;
 
 /**
- * Created by shane on 9/1/15.
+ * Implements subtraction functionality
+ * through the strategy interface.
+ *
+ * @author Shane Richards
+ * @since 2015-1-9
  */
 public class Subtract implements Operable {
 

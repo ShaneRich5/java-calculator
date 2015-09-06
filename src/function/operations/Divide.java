@@ -4,7 +4,11 @@ import function.exceptions.ZeroDivisionException;
 import function.interfaces.Operable;
 
 /**
- * Created by shane on 9/1/15.
+ * Implements division functionality
+ * through the strategy interface.
+ *
+ * @author Shane Richrds
+ * @since 2015-1-9
  */
 public class Divide implements Operable {
 

@@ -3,7 +3,11 @@ package function.operations;
 import function.interfaces.Operable;
 
 /**
- * Created by shane on 9/2/15.
+ * Implements exponent functionality
+ * through the strategy interface.
+ *
+ * @author Shane Richrds
+ * @since 2015-2-9
  */
 public class Exponent implements Operable {
     @Override

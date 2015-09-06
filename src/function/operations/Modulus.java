@@ -3,7 +3,11 @@ package function.operations;
 import function.interfaces.Operable;
 
 /**
- * Created by shane on 9/2/15.
+ * Implements modulus functionality
+ * through the strategy interface.
+ *
+ * @author Shane Richards
+ * @since 2015-1-9
  */
 public class Modulus implements Operable {
     @Override

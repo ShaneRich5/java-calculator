@@ -17,17 +17,21 @@ public class Node {
         this.data = data;
     }
 
-    //========================================================
-    //              Factories
-    //========================================================
+    /**
+     * Facotry for creating a new instance of <code>Node</code>
+     *
+     * @param data  payload of node
+     * @return      new instance of a node
+     */
     public static Node newInstance(String data){
         return new Node(data);
     }
 
-    public void setData(String newData) {
-        data = newData;
-    }
-
+    /**
+     * Getter method for a node's payload
+     *
+     * @return      a string representing a node's data
+     */
     public String getData() {
         return data;
     }
@@ -70,19 +74,7 @@ public class Node {
         return right;
     }
 
-    public boolean hasChild(){
-        return !Util.isEmpty(left) || !Util.isEmpty(right);
-    }
-
     public boolean isLeaf() {
         return Util.isEmpty(left) && Util.isEmpty(right);
-    }
-
-    public boolean hasRight() {
-        return !Util.isEmpty(getRight());
-    }
-
-    public boolean hasLeft() {
-        return !Util.isEmpty(getLeft());
     }
 }

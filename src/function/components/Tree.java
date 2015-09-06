@@ -17,6 +17,9 @@ import function.util.Util;
  */
 public abstract class Tree {
 
+    /**
+     * Public interface for NullTree
+     */
     public static final Tree EMPTY_TREE = NullTree.getInstance();
 
     public abstract Node getRoot();

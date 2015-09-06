@@ -345,11 +345,11 @@ public final class FunctionTree extends Tree {
          */
         public Tree buildTree() {
             if (expressions.size() <= 0)
-                return NullTree.getInstance();
+                return EMPTY_TREE;
             try {
                 return FunctionTree.newInstance(findOperands(expressions));
             } catch(MalformedNumberException e) {
-                return NullTree.getInstance();
+                return EMPTY_TREE;
             }
 
         }
