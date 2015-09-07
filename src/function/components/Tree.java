@@ -34,7 +34,7 @@ public abstract class Tree {
      * @author  Shane Richards
      * @since   8/21/15.
      */
-    private static class NullTree extends Tree {
+    public static class NullTree extends Tree {
         private static NullTree sInstance = null;
 
         private NullTree(){}

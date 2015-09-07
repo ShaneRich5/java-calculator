@@ -28,4 +28,8 @@ public class Util {
 
         return true;
     }
+
+    public static boolean isOperator(String token) {
+        return (Constants.ADDITION.equals(token) || Constants.SUBTRACTION.equals(token) || Constants.DIVISION.equals(token) || Constants.MULTIPLICATION.equals(token));
+    }
 }

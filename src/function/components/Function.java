@@ -7,8 +7,6 @@ import function.interfaces.Operable;
  * by taking the value of the leaves as operands and executing
  * an operation on it based on the parent.
  *
- *
- *
  * @author  Shane Richards
  * @version 1.0
  * @since   2015-9-1/15.

@@ -5,9 +5,13 @@ import function.util.Util;
 /**
  * This class represents a <code>Node</code>
  *
- * @author shane
+ * @author Shane Richards
  */
 public class Node {
+
+    /**
+     * Node's payload
+     */
     private String data;
 
     private Node left;
@@ -18,7 +22,7 @@ public class Node {
     }
 
     /**
-     * Facotry for creating a new instance of <code>Node</code>
+     * Factory for creating a new instance of <code>Node</code>
      *
      * @param data  payload of node
      * @return      new instance of a node

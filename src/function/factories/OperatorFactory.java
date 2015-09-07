@@ -25,7 +25,7 @@ public class OperatorFactory {
 
             case Constants.MULTIPLICATION:
 
-                return  new Multiply();
+                return new Multiply();
 
             case Constants.DIVISION:
 

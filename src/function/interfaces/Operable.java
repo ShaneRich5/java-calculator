@@ -8,5 +8,7 @@ package function.interfaces;
  * @since 2015-1-9
  */
 public interface Operable {
+
     double equate(double num1, double num2);
+
 }
