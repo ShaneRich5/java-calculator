@@ -2,35 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="96bcf986-ac19-4544-880e-293565b45094" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FunctionImplementation/function/components/NullTree.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FunctionImplementation/function/operations/Add.class" afterPath="$PROJECT_DIR$/out/production/FunctionImplementation/function/operations/Add.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FunctionImplementation/ui/components/controllers/CalculatorController.class" afterPath="$PROJECT_DIR$/out/production/FunctionImplementation/ui/components/controllers/CalculatorController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FunctionImplementation/function/util/Constants.class" afterPath="$PROJECT_DIR$/out/production/FunctionImplementation/function/util/Constants.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FunctionImplementation/function/operations/Divide.class" afterPath="$PROJECT_DIR$/out/production/FunctionImplementation/function/operations/Divide.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FunctionImplementation/function/operations/Exponent.class" afterPath="$PROJECT_DIR$/out/production/FunctionImplementation/function/operations/Exponent.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FunctionImplementation/function/operations/Factorial.class" afterPath="$PROJECT_DIR$/out/production/FunctionImplementation/function/operations/Factorial.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FunctionImplementation/function/components/Function.class" afterPath="$PROJECT_DIR$/out/production/FunctionImplementation/function/components/Function.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FunctionImplementation/function/components/FunctionTree$FunctionAdapter.class" afterPath="$PROJECT_DIR$/out/production/FunctionImplementation/function/components/FunctionTree$FunctionAdapter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FunctionImplementation/function/components/FunctionTree$FunctionParser.class" afterPath="$PROJECT_DIR$/out/production/FunctionImplementation/function/components/FunctionTree$FunctionParser.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FunctionImplementation/function/components/FunctionTree.class" afterPath="$PROJECT_DIR$/out/production/FunctionImplementation/function/components/FunctionTree.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FunctionImplementation/Main.class" afterPath="$PROJECT_DIR$/out/production/FunctionImplementation/Main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FunctionImplementation/function/exceptions/MalformedNumberException.class" afterPath="$PROJECT_DIR$/out/production/FunctionImplementation/function/exceptions/MalformedNumberException.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FunctionImplementation/function/operations/Modulus.class" afterPath="$PROJECT_DIR$/out/production/FunctionImplementation/function/operations/Modulus.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FunctionImplementation/function/operations/Multiply.class" afterPath="$PROJECT_DIR$/out/production/FunctionImplementation/function/operations/Multiply.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FunctionImplementation/function/components/Node.class" afterPath="$PROJECT_DIR$/out/production/FunctionImplementation/function/components/Node.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FunctionImplementation/function/operations/Root.class" afterPath="$PROJECT_DIR$/out/production/FunctionImplementation/function/operations/Root.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FunctionImplementation/function/operations/Subtract.class" afterPath="$PROJECT_DIR$/out/production/FunctionImplementation/function/operations/Subtract.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FunctionImplementation/function/components/Tree.class" afterPath="$PROJECT_DIR$/out/production/FunctionImplementation/function/components/Tree.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FunctionImplementation/function/util/Util.class" afterPath="$PROJECT_DIR$/out/production/FunctionImplementation/function/util/Util.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FunctionImplementation/function/exceptions/ZeroDivisionException.class" afterPath="$PROJECT_DIR$/out/production/FunctionImplementation/function/exceptions/ZeroDivisionException.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/function/components/Forrest.java" afterPath="$PROJECT_DIR$/src/function/components/Forrest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/function/components/Function.java" afterPath="$PROJECT_DIR$/src/function/components/Function.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/function/components/Node.java" afterPath="$PROJECT_DIR$/src/function/components/Node.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/function/interfaces/Operable.java" afterPath="$PROJECT_DIR$/src/function/interfaces/Operable.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/function/factories/OperatorFactory.java" afterPath="$PROJECT_DIR$/src/function/factories/OperatorFactory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/function/components/Tree.java" afterPath="$PROJECT_DIR$/src/function/components/Tree.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/function/util/Util.java" afterPath="$PROJECT_DIR$/src/function/util/Util.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/function/exceptions/ZeroDivisionException.java" afterPath="$PROJECT_DIR$/src/function/exceptions/ZeroDivisionException.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="FunctionImplementation.iws" />
@@ -57,8 +28,8 @@
       <file leaf-file-name="FunctionTree.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/function/components/FunctionTree.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.40533334">
-              <caret line="66" column="29" selection-start-line="66" selection-start-column="29" selection-end-line="66" selection-end-column="29" />
+            <state vertical-scroll-proportion="0.119008265">
+              <caret line="90" column="45" selection-start-line="90" selection-start-column="45" selection-end-line="90" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -69,7 +40,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="11" column="38" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -193,6 +166,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -465,7 +439,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -870,27 +843,26 @@
       <workItem from="1441502595696" duration="1796000" />
       <workItem from="1441516582429" duration="1289000" />
       <workItem from="1441559402172" duration="667000" />
-      <workItem from="1441567026264" duration="6329000" />
+      <workItem from="1441567026264" duration="6358000" />
+      <workItem from="1441589830518" duration="1313000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="207383000" />
+    <option name="totallyTimeSpent" value="208725000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1985" y="24" width="1375" height="876" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32435897" sideWeight="0.49806523" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20171674" sideWeight="0.5177956" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.44547874" sideWeight="0.4867968" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18669528" sideWeight="0.48220438" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18589744" sideWeight="0.48220438" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19413093" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -898,13 +870,15 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32435897" sideWeight="0.49806523" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.44547874" sideWeight="0.4867968" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32939914" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -980,7 +954,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="18" column="46" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1090,14 +1066,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ui/components/views/CalculatorOverview.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.30099502">
           <caret line="59" column="128" selection-start-line="59" selection-start-column="128" selection-end-line="59" selection-end-column="128" />
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
       </provider>
     </entry>
     <entry file="jar:///usr/java/jdk1.8.0_51/src.zip!/java/lang/AssertionError.java">
@@ -1183,7 +1159,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.32142857">
           <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1191,7 +1166,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="7" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1223,10 +1197,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="15" column="7" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
-          <folding>
-            <element signature="e#399#400#0" expanded="true" />
-            <element signature="e#422#423#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1234,7 +1204,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="27" column="22" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1242,10 +1211,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding>
-            <element signature="e#301#302#0" expanded="true" />
-            <element signature="e#335#336#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1253,7 +1218,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="22" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1261,7 +1225,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1269,7 +1232,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1277,7 +1239,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1318,8 +1279,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="33" column="5" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
           <folding>
-            <element signature="e#314#315#0" expanded="true" />
-            <element signature="e#351#352#0" expanded="true" />
+            <element signature="e#314#315#0" expanded="false" />
+            <element signature="e#351#352#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1336,14 +1297,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="11" column="38" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/function/components/FunctionTree.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.40533334">
-          <caret line="66" column="29" selection-start-line="66" selection-start-column="29" selection-end-line="66" selection-end-column="29" />
+        <state vertical-scroll-proportion="0.119008265">
+          <caret line="90" column="45" selection-start-line="90" selection-start-column="45" selection-end-line="90" selection-end-column="45" />
           <folding />
         </state>
       </provider>
